@@ -1,0 +1,30 @@
+Na aula de preparação do ambiente fizemos a instalção de duas bibliotecas interessantes:
+- virtualenv
+- virtualenvwrapper
+
+Essas ferramentas são muito poderosas e nos permite criar ambientes isolados de desenvolvimento Python, ou seja, torna possível a utilização de diversas bibliotecas em um mesmo ambiente sem que haja conflitos entre elas
+Quando desenvolvemos com Python "globalmente", ou seja, diretamente com o Python instalado no sistema operacional, ao invés de isolarmos os ambientes de cada projeto em desenvolvimento, podemos ter conflito entre versões de bibliotecas.
+Podemos por exemplo desenvolver um projeto onde determinada biblioteca, por exemplo 'colorama' só seja possível usar com Python 3.4 e em outro projeto fazemos uso de uma biblioteca, por exemplo 'numpy' na qual queremos usar os últimos recursos do Python 3.8.5.
+Se não tivermos ambientes virtuais com o isolamento não seria possível fazer isso
+
+O funcionamento do virtualenv é bastante simples, ele basicamente cria uma cópia de todos os diretórios necessários para que um programa Python seja executado.
+Desta forma, ao instalar uma nova biblioteca dentro do ambiente virtual criado, esta biblioteca será colocada no diretório do virtualenv e não mais de forma global no sistema operacional.
+
+Desta forma, um programador Python irá criar para cada projeto um ambiente virtual, de preferência com o mesmo nome do projeto para que seja fácil encontrar e fazer uso.
+Por exemplo, imaginando que temos um projeto de um e-commerce, podemos criar um ambiente virtual conforme:
+
+mkvirtualenv ecommerce
+
+
+
+Versão VScode:
+- Após criar pasta do projeto, abrir console e digitar:
+    python -m venv 'nome do projeto'
+- Ativar ambiente virtual:
+    .\'nome do projeto'\Scripts\Activate.ps1 (powershell) .bat (cmd)
+- Tirar restrição powershell
+    Abrir powershell do windows como adm e digitar:
+    Set-ExecutionPolicy -Scope CurrentUser - ExecutionPolicy RemoteSigned
+    S para confirmar e digitar novamente o comando: 
+    .\'nome do projeto'\Scripts\Activate.ps1 (powershell) .bat (cmd)
+

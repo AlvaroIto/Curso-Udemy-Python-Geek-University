@@ -1,0 +1,37 @@
+'''
+PEP8 - Python Enchancement Proposal
+
+São propostas de melhorias para a linguagem Python
+
+A idéia da PEP8 é que possamos escrever códigos Python de forma Pythonica
+
+1- Utilize Camel Case para nomes de classes;
+class CalculadoraCientifica:
+    pass
+
+2- Utilize nomes em minúsculo, separados por underline para funções ou variáveis:
+def soma():
+    pass
+
+def soma_dois():
+    pass
+
+numero = 4
+numero_impar = 5
+
+3- Utilize 4 espaços para identação!
+if 'a' in 'banana':
+    print('tem')
+
+4- Linhas em branco
+Separar funções e definições de classe com duas linhas em branco:
+Métodos dentro de uma classe devem ser separados com uma única linha em branco
+
+5- Imports
+Imports devem ser sempre separados em linhas separadas
+
+6- Espaços em expressões e instruções
+Espaços desnecessários
+
+7- Termine sempre uma instrução com uma nova linha
+'''
