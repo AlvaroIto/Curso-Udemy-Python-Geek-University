@@ -13,5 +13,4 @@ meses = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'A
 Tuplas são mais rápidas do que listas
 Tuplas deixam seu código mais seguro (devido a sua imutabilidade)
 
-
 """
