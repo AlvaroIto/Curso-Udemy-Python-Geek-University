@@ -64,67 +64,171 @@
 #print(f'A distância em quilômetros {km} corresponde a {milhas} milhas')
 
 #14. Leia um ângulo em graus e apresente-o convertido em radianos. A fórmula de conversão é: R= G*3.14/180, sendo G o ângulo em graus e R em radianos e x = 3.14. 
-graus = float(input('Digite o ângulo em graus: '))
-rad = graus * 3.14 / 180
-print(f'O ângulo {graus} gruas, corresponde a {rad} radianos')
+#graus = float(input('Digite o ângulo em graus: '))
+#rad = graus * 3.14 / 180
+#print(f'O ângulo {graus} gruas, corresponde a {rad} radianos')
 
-
-#15. Leia um ângulo em radianos e apresente-o convertido em graus. A fórmula de conversão é: G = R*180/7, sendo G o angulo em graus e R em radianos e x = 3.14. 
+#15. Leia um ângulo em radianos e apresente-o convertido em graus. A fórmula de conversão é: G = R*180/3.14, sendo G o angulo em graus e R em radianos e x = 3.14. 
+#rad = float(input('Digite o ângulo em radiano: '))
+#graus = rad * 180 / 3.14
+#print(f'O ângulo radiano {rad} em graus é: {graus}')
 
 #16. Leia um valor de comprimento em polegadas e apresente-o convertido em centímetros. A fórmula de conversão é: C = P *2,54, sendo € o comprimento em #centimetros e P o comprimento em polegadas. 
+#pol = float(input('Digite o comprimento em polegadas: '))
+#cm = pol * 2.54
+#print(f'{pol} polegadas convertida para centímetros: {cm}')
 
-#17. Leia um valor de comprimento em centímetros e apresente-o convertido em polegadas. A fórmula de conversão é: P = fi sendo € o comprimento em centimetros e P #o comprimento em polegadas. 
+#17. Leia um valor de comprimento em centímetros e apresente-o convertido em polegadas. A fórmula de conversão é: P = C / 2.54 sendo C o comprimento em centimetros e P o comprimento em polegadas. 
+#cm = float(input('Digite o comprimento em centímetros: '))
+#pol = cm / 2.54
+#print(f'{cm} centímetros convertido para polegadas: {pol}')
 
-#18. Leia um valor de volume em metros cubicos m” e apresente-o convertido em litros. A formula de conversao é: L = 1000 = M, sendo L o volume em litros e M o #volume em metros cubicos. 
+#18. Leia um valor de volume em metros cubicos m” e apresente-o convertido em litros. A formula de conversao é: L = 1000 * M, sendo L o volume em litros e M o #volume em metros cubicos. 
+#m = float(input('Digite o volume em metros cúbicos: '))
+#l = 1000 * m
+#print(f'{m} metros cubicos em litros é: {l}')
 
-#19. Leia um valor de volume em litros e apresente-o convertido em metros cúbicos m®. A formula de conversao é: M = 14, sendo L o volume em litros e M o volume #em metros cubicos. 
+#19. Leia um valor de volume em litros e apresente-o convertido em metros cúbicos m®. A formula de conversao é: M = l / 1000, sendo L o volume em litros e M o volume #em metros cubicos. 
+#l = float(input('Digite o volume em litros: '))
+#m = l / 1000
+#print(f'O volume {l} litros em metros cubicos é: {m}')
 
-#20. Leia um valor de massa em quilogramas e apresente-o convertido em libras. A formula de conversão é: L = 7=, sendo K a massa em quilogramas e L a massa em #libras.
+#20. Leia um valor de massa em quilogramas e apresente-o convertido em libras. A formula de conversão é: L = k / 0.45, sendo K a massa em quilogramas e L a massa em #libras.
+#k = float(input('Digite o valor em quilogramas: '))
+#l = k / 0.45
+#print(f'O valor {k} quilogramas em libras é: {l:.2f}')
 
 #21. Leia um valor de massa em libras e apresente-o convertido em quilogramas. A fórmula de conversão é: K = L*0,45, sendo K a massa em quilogramas e L a massa #em libras. 
+#l = float(input('Digite o valor em libras: '))
+#k = l * 0.45
+#print(f'O valor {l} libras em quilogramas é: {k}')
 
 #22. Leia um valor de comprimento em jardas e apresente-o convertido em metros. A fórmula de conversão é: M = 0,91 * J, sendo J o comprimento em jardas e M o #comprimento em metros. 
+#j = float(input('Digite o comprimento em jardas: '))
+#m = 0.91 * j
+#print(f'O valor {j} jardas em metros é: {m}')
 
-#23. Leia um valor de comprimento em metros e apresente-o convertido em jardas. A fórmula de conversão é: J = fi sendo J o comprimento em jardas e M o #comprimento em metros. 
+#23. Leia um valor de comprimento em metros e apresente-o convertido em jardas. A fórmula de conversão é: J = m / 0.91 sendo J o comprimento em jardas e M o #comprimento em metros. 
+#m = float(input('Digite o comprimento em metros: '))
+#j = m / 0.91
+#print(f'O valor {m} metros em jardas é: {j:.2f}')
 
-#24. Leia um valor de 4rea em metros quadrados m? e apresente-o convertido em acres. A férmula de conversao é: A = M = 0,000247, sendo M a área em metros #quadrados e A a área em acres. 
+#24. Leia um valor de área em metros quadrados m2 e apresente-o convertido em acres. A férmula de conversao é: A = M * 0,000247, sendo M a área em metros #quadrados e A a área em acres. 
+#m = float(input('Digite a área em metros quadrados: '))
+#a = m * 0.000247
+#print(f'A área {m} metros quadrados em acres é: {a}')
 
-#25. Leia um valor de área em acres e apresente-o convertido em metros quadrados m?. A fórmula de conversão é: M = A * 4048,58, sendo M a área em metros #quadrados e A a área em acres. 
+#25. Leia um valor de área em acres e apresente-o convertido em metros quadrados m2. A fórmula de conversão é: M = A * 4048,58, sendo M a área em metros #quadrados e A a área em acres. 
+#a = float(input('Digite a área em acres: '))
+#m = a * 4048.58
+#print(f'A área {a} acres em metros quadrados é: {m}')
 
-#26. Leia um valor de área em metros quadrados m? e apresente-o convertido em hectares. A fórmula de conversão é: H = M * 0,0001, sendo M a área em metros #quadrados e H a área em hectares.
+#26. Leia um valor de área em metros quadrados m2 e apresente-o convertido em hectares. A fórmula de conversão é: H = M * 0,0001, sendo M a área em metros #quadrados e H a área em hectares.
+#m = float(input('Digite a área em metros quadrados: '))
+#h = m * 0.0001
+#print(f'A área {m} metros quadrados em hectares é: {h}')
 
-#27. Leia um valor de área em hectares e apresente-o convertido em metros quadrados m?. A fórmula de conversão é: M = H * 10000, sendo M a área em metros #quadrados e H a área em hectares. 
+#27. Leia um valor de área em hectares e apresente-o convertido em metros quadrados m2. A fórmula de conversão é: M = H * 10000, sendo M a área em metros #quadrados e H a área em hectares. 
+#h = float(input('Digite a área em hectares: '))
+#m = h * 10000
+#print(f'A área {h} hectares em metros quadrados é: {m}')
 
 #28. Faça a leitura de três valores e apresente como resultado a soma dos quadrados dos três valores lidos. 
+#v1 = int(input('Digite o primeiro valor: '))
+#v2 = int(input('Digite o segundo valor: '))
+#v3 = int(input('Digite o terceiro valor: '))
+#res = (v1 **2) + (v2 **2) + (v3 **2)
+#print(f'A soma dos quadrados dos três valores é: {res}')
 
 #29. Leia quatro notas, calcule a média aritmética e imprima o resultado. 
+#n1 = float(input('Digite a primeira nota: '))
+#n2 = float(input('Digite a segunda nota: '))
+#n3 = float(input('Digite a terceira nota: '))
+#n4 = float(input('Digite a quarta nota: '))
+#m = (n1 + n2 + n3 + n4) / 4
+#print(f'A média aritméticas das notas é: {m:.2f}')
 
 #30. Leia um valor em real e a cotação do dólar. Em seguida, imprima o valor correspondente em dólares.
+#r = float(input('Digite o valor em real: R$'))
+#cot_d = float(input('Informe o valor do dolar em real: R$'))
+#d = r / cot_d
+#print(f'Com a cotação do dólar a R${cot_d}; R${r} equivale a ${d}')
 
 #31. Leia um número inteiro e imprima o seu antecessor e 0 seu sucessor. 
+#num = int(input('Digite um número inteiro: '))
+#print(f'Número digitado: {num}')
+#print(f'Antecessor: {num - 1}')
+#print(f'Sucessor: {num + 1}')
 
 #32. Leia um nimero inteiro e imprima a soma do sucessor de seu triplo com o antecessor de seu dobro. 
+#num = int(input('Digite um número inteiro: '))
+#t = (num * 3) + 1
+#d = (num * 2) - 1
+#print(f'Número digitado: {num}')
+#print(f'Sucessor do seu triplo: {t}')
+#print(f'antecessor do seu dobro: {d}')
+#print(f'Soma do sucessor de seu triplo com antecessor do seu dobro: {t + d}')
 
 #33. Leia o tamanho do lado de um quadrado e imprima como resultado a sua area. 
+#l = float(input('Digite o lado de um quadrado: '))
+#area = l ** 2
+#print(f'A área de um quadrado de lado {l} é: {area}')
 
-#34. Leia o valor do raio de um circulo e calcule e imprima a area do circulo correspondente. A área do circulo é 7 * raio?, considere = = 3.141592.
+#34. Leia o valor do raio de um circulo e calcule e imprima a area do circulo correspondente. A área do circulo é 3.14 * raio ao quadrado, considere = = 3.141592.
+#r = float(input('Digite o raio de um círculo: '))
+#area = 3.14 * (r ** 2)
+#print(f'A área de um círculo de raio {r} é: {area}')
 
-#35. Sejam a e b os catetos de um tridngulo, onde a hipotenusa é obtida pela equaçao: 
-#hipotenusa = Va? +b?. Faga um programa que receba os valores de a e b e calcule o valor da hipotenusa através da equação. Imprima o resultado dessa operagao. 
+#35. Sejam a e b os catetos de um triângulo, onde a hipotenusa é obtida pela equaçao: 
+#hipotenusa = raiz de a ao quadrado + b ao quadrado. Faga um programa que receba os valores de a e b e calcule o valor da hipotenusa através da equação. Imprima o resultado dessa operagao. 
+#from math import sqrt
+#a = float(input('Digite o valor de a: '))
+#b = float(input('Digite o valor de b: '))
+#hip = sqrt((a ** 2 + b ** 2))
+#print(hip)
 
-#36. Leia a altura e o raio de um cilindro circular e imprima o volume do cilindro. O volume de um cilindro circular é calculado por meio da seguinte férmula: V #= 7 = raio® = altura, onde 7 = 3.141592.
+#36. Leia a altura e o raio de um cilindro circular e imprima o volume do cilindro. O volume de um cilindro circular é calculado por meio da seguinte férmula: V = 3,14 * r ao quadrado * altura, onde 7 = 3.141592.
+#h = float(input('Digite a altura do cilindro: '))
+#r = float(input('Digite o raio do cilindro: '))
+#v = 3,14 * (r ** 2) * h 
+#print(f'O volume de um cilindro de altura:{h} e raio:{r} é: {v}')
 
 #37. Faça um programa que leia o valor de um produto e imprima o valor com desconto, tendo em vista que o desconto foi de 12% 
+#valor_produto = float(input('Digite o valor do produto: R$'))
+#valor_desconto = valor_produto - (valor_produto * 0.12)
+#print(f'Valor do produto: R${valor_produto}')
+#print(f'Valor do produto com desconto: R${valor_desconto}')
 
-#38. Leia o salario de um funcionario. Calcule e imprima o valor do novo salério, sabendo que ele recebeu um aumento de 25%. 
+#38. Leia o salario de um funcionario. Calcule e imprima o valor do novo salário, sabendo que ele recebeu um aumento de 25%. 
+#sal = float(input('Digite o salário do funcionário: R$'))
+#aumento = sal + (sal * 0.25)
+#print(f'Salário do funcionário: R${sal}')
+#print(f'Salário do funcionário com aumento: R${aumento:.2f}')
 
 #39. A importancia de R$ 780.000,00 sera dividida entre trés ganhadores de um concurso. Sendo que da quantia total: 
 # O primeiro ganhador recebera 46%; 
 # O segundo recebera 32%; 
 # O terceiro recebera o restante; 
 #Calcule e imprima a quantia ganha por cada um dos ganhadores. 
- 
+#valor = 78000000
+#print(f'Valor total: R${valor}')
+#pri = valor * 0.46
+#valor = valor - pri
+#print(f'Primeiro ganhador: R${pri}')
+#seg = valor * 0.32
+#valor = valor - seg
+#print(f'Segundo ganhador: R${seg}')
+#ter = valor
+#print(f'terceiro ganhador: R${ter}')
+
 #40. Uma empresa contrata um encanador a R$ 30,00 por dia. Faga um programa que solicite o número de dias trabalhados pelo encanador e imprima a quantia liquida #que devera ser paga, sabendo-se que são descontados 8% para imposto de renda.
+#dia = 30.00
+#dias_trabalhados = int(input('Informe os dias trabalhados: '))
+#valor_total = dia * dias_trabalhados
+#valor_liquido = valor_total - (valor_total * 0.08)
+#print(f'Dias trabalhados: {dias_trabalhados}')
+#print(f'Valor total: R${valor_total}')
+#print(f'Valor a receber com 8% de IR: R${valor_liquido}')
 
 #41. Faça um programa que leia o valor da hora de trabalho (em reais) e número de horas trabalhadas no mês. Imprima o valor a ser pago ao funcionário, #adicionando 10% sobre o valor calculado. 
 
