@@ -231,22 +231,80 @@
 #print(f'Valor a receber com 8% de IR: R${valor_liquido}')
 
 #41. Faça um programa que leia o valor da hora de trabalho (em reais) e número de horas trabalhadas no mês. Imprima o valor a ser pago ao funcionário, #adicionando 10% sobre o valor calculado. 
+#hora_reais = float(input('Digite o valor por horas trabalhadas: R$'))
+#hora_mes = int(input('Digite as horas trabalhadas no mês: '))
+#bruto = (hora_mes * hora_reais)
+#valor_real = bruto + (bruto * 0.1)
+#print(f'Horas trabalhadas por mês: {hora_mes}')
+#print(f'Valor por hora: R${hora_reais}')
+#print(f'Valor bruto: {bruto}')
+#print(f'Valor real adicionando 10%: {valor_real}')
 
-#42. Receba o salario-base de um funcionario. Calcule e imprima o salario a receber, sabendo-se que esse funciondrio tem uma gratificagao de 5% sobre o #saldrio-base. Além disso, ele paga 7% de imposto sobre o saldrio-base. 
+#42. Receba o salario-base de um funcionario. Calcule e imprima o salario a receber, sabendo-se que esse funciondrio tem uma gratificação de 5% sobre o #saldrio-base. Além disso, ele paga 7% de imposto sobre o salário-base. 
+#salario_base = float(input('Informe o valor base: R$'))
+#gratificacao = salario_base + (salario_base * 0.05)
+#imposto = gratificacao - (gratificacao * 0.07)
+#print(f'Salário base: {salario_base}')
+#print(f'Salário com gratificação: {gratificacao}')
+#print(f'Salário final tirando 7% de imposto: {imposto}')
 
 #43. Escreva um programa de ajuda para vendedores. A partir de um valor total lido, mostre: 
 # o total a pagar com desconto de 10%; 
 # o valor de cada parcela, no parcelamento de 3x sem juros; 
 # a comissao do vendedor, no caso da venda ser a vista (5% sobre o valor com desconto) 
 # a comissão do vendedor, no caso da venda ser parcelada (5% sobre o valor total) 
+#valor_produto = float(input('Informe o valor do produto: R$'))
+#pagamento = str(input('Pagamento a vista(v) ou parcelado(p)?: '))
+#print(f'Valor do produto: R${valor_produto:.2f}')
+#if pagamento == 'v':
+#    valor_desconto = valor_produto - (valor_produto * 0.1)
+#    comissao_vista = valor_desconto * 0.05
+#    print(f'Valor com desconto de 10%: R${valor_desconto:.2f}')
+#    print(f'Comissão vendedor a vista: R${comissao_vista:.2f}')
+#else:
+#    parcela_3x = valor_produto / 3
+#    comissao_parcela = valor_produto * 0.05
+#    print(f'Valor dividido 3x sem juros: R${parcela_3x:.2f}')
+#    print(f'Comissão vendedor parcelado: R${comissao_parcela:.2f}')
 
-#44. Receba a altura do degrau de uma escada e a altura que o usudrio deseja alcangar subindo a escada. Calcule e mostre quantos degraus o usuério deveré subir #para atingir seu objetivo. 
+#44. Receba a altura do degrau de uma escada e a altura que o usuário deseja alcançar subindo a escada. Calcule e mostre quantos degraus o usuário deveré subir #para atingir seu objetivo. 
+#alt_degrau = int(input("Informe a altura do degrau em centímetros: "))
+#alt_desejada = int(input('Informe a altura que deseja alcançar em centímetros: '))
+#degraus = alt_desejada // alt_degrau
+#print(f'Para atingir a altura de {alt_desejada} centímetros com cada degrau tendo {alt_degrau} centímetros o usuário deverá subir {degraus:.0f} degraus')
 
 #45. Faga um programa para converter uma letra maiúscula em letra minúscula. Use a tabela ASCII para resolver o problema. 
+#letra = str(input('digite uma letra:' ))
+#print(letra.upper())
 
 #46. Faça um programa que leia um nimero inteiro positivo de trés digitos (de 100 a 999). Gere outro número formado pelos digitos invertidos do número lido. #Exemplo: 
 #NumeroLido = 123 
 #NumeroGerado = 321. 
+while True:
+    num = int(input('Digite um número de 3 dígitos entre 100 e 999: '))
+    if num < 100 or num > 999:
+        print('Número precisa ser entre 100 e 999')
+    else:
+        break
+
+lista = list(str(num))
+reversa = lista[::-1]
+
+
+
+
+
+
+#u = num % 10
+#d = (num // 10) % 10
+#c = num // 100
+
+
+
+#print(f'Número digitado: {num}')
+#print(f'Número invertido: {reverso}')
+
+    
 
 #47. Leia um número inteiro de 4 digitos (de 1000 a 9999) e imprima 1 digito por linha. 
 
