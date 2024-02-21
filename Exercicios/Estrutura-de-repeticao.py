@@ -162,50 +162,201 @@ else:
 
 
 #13. Faga um algoritmo que calcule a média ponderada das notas de 3 provas. A primeira e a segunda prova tém peso 1 e a terceira tem peso 2. Ao final, mostrar a média do aluno e indicar se o aluno foi aprovado ou reprovado. A nota para aprovagao deve ser igual ou superior a 60 pontos. 
+'''
 n1 = float(input('Digite a primeira nota: '))
 n2 = float(input('Digite a segunda nota: '))
 n3 = float(input('Digite a terceira nota: '))
 
 media = ((n1 + n2 + (n3 * 2)) / 4)
 
-print(f'A média ponderada das notas {n1} + {n2} + {n3} = {media:2.f}')
+print(f'A média ponderada das notas {n1} + {n2} + {n3} = {media}')
+'''
 
 
+#14. A nota final de um estudante é calculada a partir de trés notas atribuidas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratério, a uma avalição semestral e a um exame final. A média das trés notas mencionadas anteriormente obedece aos pesos: Trabalho de Laboratério: 2; Avaliação Semestral: 3; Exame Final: 5. De acordo com o resultado, mostre na tela se o aluno esta reprovado (média entre 0 e 2,9), de recuperacao (entre 3 e 4,9) ou se foi aprovado. Faça todas as verificagoes necessarias. 
+'''
+lab = float(input('Digite a primeira nota: '))
+ava = float(input('Digite a segunda nota: '))
+exa = float(input('Digite a terceira nota: '))
+peso_lab = 2
+peso_ava = 3
+peso_exa = 5
 
-#14. Anota final de um estudante é calculada a partir de trés notas atribuidas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratério, a uma avaliagao semestral e a um exame final. A média das trés notas mencionadas anteriormente obedece aos pesos: Trabalho de Laboratério: 2; Avaliagao Semestral: 3; Exame Final: 5. De acordo com o resultado, mostre na tela se o aluno esta reprovado (média entre 0 e 2,9), de recuperacao (entre 3 e 4,9) ou se foi aprovado. Faça todas as verificagoes necessarias. 
+media = (lab * peso_lab + ava * peso_ava + exa * peso_exa) / (peso_lab + peso_ava + peso_exa)
+
+if media <= 2.9:
+    print(f'Média:{media}. Reprovado!')
+elif media >= 3 and media <= 4.9:
+    print(f'Média:{media}. Recuperação!')
+else:
+    print(f'Média:{media}. Aprovado')
+'''
 
 
 #15. Usando switch, escreva um programa que leia um inteiro entre 1 e 7 e imprima o dia da semana correspondente a este numero. Isto é, domingo se 1, segunda -feira se 2, e assim por diante. 
+'''
+num = int(input('Digite um número de 1 a 7: '))
+if num not in range(1,8,1):
+    print(f'Número {num} precisa estar entre 1 e 7')
+else:
+    if num == 1:
+        print('Domingo')
+    elif num == 2:
+        print('Segunda-feira')
+    elif num == 3:
+        print('Terça-feira')
+    elif num == 4:
+        print('Quarta-feira')
+    elif num == 5:
+        print('Quinta-feira')
+    elif num == 6:
+        print('Sexta-feira')
+    else:
+        print('Sábado')
+'''
 
 
 #16. Usando switch, escreva um programa que leia um inteiro entre 1 e 12 e imprima o mês correspondente a este numero. Isto é, janeiro se 1, fevereiro se 2, e assim por diante. 
-
+'''
+num = int(input('Digite um número de 1 a 12: '))
+if num not in range(1,12,1):
+    print(f'Número {num} precisa estar entre 1 e 12')
+else:
+    if num == 1:
+        print('Janeiro')
+    elif num == 2:
+        print('Fevereiro')
+    elif num == 3:
+        print('Março')
+    elif num == 4:
+        print('Abril')
+    elif num == 5:
+        print('Maio')
+    elif num == 6:
+        print('Junho')
+    elif num == 7:
+        print('Julho')
+    elif num == 8:
+        print('Agosto')
+    elif num == 9:
+        print('Setembro')
+    elif num == 10:
+        print('Outubro')
+    elif num == 11:
+        print('Novembro')
+    else:
+        print('Dezembro')
+'''
 
 #17. Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que: 
 #A = (basemaior + basemenor) * altura / 2
 #Lembre-se a base maior e a base menor devem ser números maiores que zero.
+'''
+base_menor = float(input('Digite o valor da base menor: '))
+base_maior = float(input('Digite o valor da base maior: '))
+altura = float(input('Digite a altura do trapézio: '))
+area = ((base_maior + base_menor) * altura) / 2
+if base_maior <= 0  or base_menor <= 0:
+    print('Bases devem ser maior que 0')
+else:
+    print(f'área do trapézio é: {area}')
+
+'''
 
 
-#18. Faga um programa que mostre ao usuario um menu com 4 opgoes de operagoes matematicas (as basicas, por exemplo). O usudrio escolhe uma das opções e o seu programa então pede dois valores numéricos e realiza a operação, mostrando o resultado e saindo. 
+#18. Faga um programa que mostre ao usuario um menu com 4 opgoes de operagoes matematicas (as basicas, por exemplo). O usuário escolhe uma das opções e o seu programa então pede dois valores numéricos e realiza a operação, mostrando o resultado e saindo. 
+'''
+print(
+    'OPERAÇÕES MATEMÁTICAS:\n'
+    'SOMA: +\n'
+    'SUBRATRAÇÃO: -\n'
+    'MULTIPLICAÇÃO: *\n'
+    'DIVISÃO: /\n'
+    'ESCOLHA UMA OPÇÃO:'
+)
+op = input()
+n1 = float(input('Digite o primeiro valor: '))
+n2 = float(input('Digite o segundo valor: '))
+
+if op == '+':
+    print(f'{n1} {op} {n2} = {n1 + n2}')
+elif op == '-':
+    print(f'{n1} {op} {n2} = {n1 - n2}')
+elif op == '*':
+    print(f'{n1} {op} {n2} = {n1 * n2}')
+else:
+    print(f'{n1} {op} {n2} = {n1 / n2:.2f}')
+'''
+
+#19. Faga um programa para verificar se um determinado número inteiro e divisivel por 3 ou 5, mas nao simultaneamente pelos dois. 
+'''
+num = int(input('digite um número: '))
+div3 = num % 3 == 0
+div5 = num % 5 == 0
+
+if div3 and div5:
+    print(f'ERRO! {num} é divisível por 3 e 5 simultaneamente')
+else:
+    if div3:
+        print(f'{num} é divisível por 3')
+    elif div5:
+        print(f'{num} é divisível por 5')
+'''
 
 
-#19. Faga um programa para verificar se um determinado nimero inteiro e divisivel por 3 ou 5, mas nao simultaneamente pelos dois. 
-
-
-#20. Dados trés valores, A, B, C, verificar se eles podem ser valores dos lados de um tridngulo e, se forem, se é um tridngulo escaleno, equilatero ou iséscele, considerando os seguintes conceitos: 
+#20. Dados trés valores, A, B, C, verificar se eles podem ser valores dos lados de um triângulo e, se forem, se é um tridngulo escaleno, equilatero ou iséscele, considerando os seguintes conceitos: 
 # O comprimento de cada lado de um triangulo é menor do que a soma dos outros dois lados. 
 # Chama-se equilatero o triangulo que tem trés lados iguais. 
 # Denominam-se isosceles o triangulo que tem o comprimento de dois lados iguais. 
 # Recebe o nome de escaleno o tridngulo que tem os trés lados diferentes. 
+'''
+lado_a = int(input('Digite o primeiro lado do triângulo: '))
+lado_b = int(input('Digite o segundo lado do triângulo: '))
+lado_c = int(input('Digite o terceiro lado do triângulo: '))
 
+if lado_a < lado_b + lado_c and lado_b < lado_a + lado_c and lado_c < lado_a + lado_b:
+    print(f'Os lados {lado_a} {lado_b} e {lado_c} podem formar um triângulo')
+else:
+    print(f'Os lados {lado_a} {lado_b} e {lado_c} NÃO podem formar um triângulo')
+'''
+     
 
-#21. Escreva o menu de opções abaixo. Leia a opção do usuário e execute a operagao escolhida. Escreva uma mensagem de erro se a opgao for invalida. 
+#21. Escreva o menu de opções abaixo. Leia a opção do usuário e execute a operação escolhida. Escreva uma mensagem de erro se a opção for invalida. 
     #Escolha a opção: 
     #1- Soma de 2 números. 
     #2- Diferença entre 2 números (maior pelo menor). 
     #3- Produto entre 2 números. 
     #4- Divisão entre 2 números (o denominador não pode ser zero). 
-    #Opção 
+    #Opção
+'''
+print('ESCOLHA UMA OPÇÃO:\n'
+      '1- Soma de 2 números\n'
+      '2- Diferença entre 2 números (maior pelo menor)\n'
+      '3- Produto entre 2 números\n'
+      '4- Divisão entre 2 números (o denomindador não pode ser 0)'
+      )
+op = input('Opção: ')
+
+if op not in '1234':
+    print('Opção inválida!')
+else:
+    num1 = int(input('Digite o primeiro número: '))
+    num2 = int(input('Digite o segundo número: '))
+    if op == '1':
+        print(f'{num1} + {num2} = {num1 + num2}')
+    elif op == '2':
+        if num2 < num1:
+            print(f'{num1} - {num2} = {num1 - num2}')
+        elif num1 < num2:
+            print(f'{num2} - {num1} = {num2 - num1}')
+    elif op == '3':
+        print(f'{num1} * {num2} = {num1 * num2}')
+    else:
+        if num2 == 0:
+            print(f'Erro! O denominador não pode ser zero')
+        else:
+            print(f'{num1} / {num2} = {num1 / num2:.2f}')
+'''
 
 
 #22. Leia a idade e o tempo de servico de um trabalhador e escreva se ele pode ou não se aposentar. As condições para aposentadoria são 
