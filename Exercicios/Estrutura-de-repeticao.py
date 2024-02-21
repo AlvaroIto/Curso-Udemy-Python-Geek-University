@@ -91,21 +91,85 @@ else:
     print(f'Média: {(n1 + n2) / 2}')
 '''
 
-#9. Leia o saldrio de um trabalhador e o valor da prestação de um empréstimo. Se a prestação for maior que 20% do salario imprima: Empréstimo ndo concedido, caso contrério imprima: Empréstimo concedido.
+#9. Leia o salário de um trabalhador e o valor da prestação de um empréstimo. Se a prestação for maior que 20% do salario imprima: Empréstimo não concedido, caso contrério imprima: Empréstimo concedido.
+'''
+salario = float(input('Digite o salário: R$'))
+prestacao = float(input('Digite o valor da prestação: R$'))
+limite = salario * 0.2
+if prestacao > limite:
+    print(f'Salário: R${salario}')
+    print(f'Prestação solicitada: R${prestacao}')
+    print(f'Limite  para prestação: R${limite}')
+    print('Empréstimo não concedido, prestação acima de 20% do salário')
+else:
+    print(f'Salário: R${salario}')
+    print(f'Prestação solicitada: R${prestacao}')
+    print(f'Limite  para prestação: R${limite}')
+    print('Empréstimo concedido!')
+'''
 
+#10. Faga um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal, utilizando as seguintes formulas (onde h corresponde a altura):
+#Homens: (72.7 * h) — 58 
+#Mulheres: (62.1 * h) — 44.7
+'''
+h = float(input('Digite a altura em metros: '))
+#verificar se sexo foi digitado corretamente
+while True:
+    s = str(input('Digite o sexo (M/F): ')).lower()
+    if s not in 'MmFf':
+        print('Sexo incorreto, tente novamente')
+    else:
+        break
 
-#10. Faga um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal, utilizando as seguintes formulas (onde / corresponde a altura):
-# Homens: (72.7+ h) — 58 
-# Mulheres: (62,1 = h) — 44,7
+if s == 'm':
+    peso_ideal = (72.6 * h) - 58
+else:
+    peso_ideal = (62.1 * h) - 44.7
+
+print(f'Sexo = {s}')
+print(f'Altura = {h:.2f}mts')
+print(f'Peso ideal = {peso_ideal:.2f}kg')
+'''
 
 
 #11. Escreva um programa que leia um número inteiro maior do que zero e devolva, na tela, a soma de todos os seus algarismos. Por exemplo, ao número 251 corresponderá o valor 8(2+5+1). Se o número lido não for maior do que zero, o programa terminara com a mensagem “Número inválido”. 
+'''
+num = int(input('Digite um número maior que 0: '))
+soma = 0
+#verificar se número é maior que 0
+if num <= 0:
+    print(f'Número {num} inválido!')
+else:
+    #transformar numeros em lista para iterar
+    lista_num = list(str(num))
+    for n in lista_num:
+        soma += (int(n))
+
+print(f'A soma dos algarismos digitados ({num}) é: {soma}')
+'''
 
 
 #12. Ler um número inteiro. Se o número lido for negativo, escreva a mensagem “Número invalido”. Se o número for positivo, calcular o logaritmo deste numero. 
+'''
+from math import log
+num = int(input('Digite um número inteiro: '))
+if num < 0:
+    print(f'Número {num} inválido')
+else:
+    logaritmo = log(num)
+    print(f'O logaritmo de {num} é: {logaritmo:.2f}')
+'''
 
 
 #13. Faga um algoritmo que calcule a média ponderada das notas de 3 provas. A primeira e a segunda prova tém peso 1 e a terceira tem peso 2. Ao final, mostrar a média do aluno e indicar se o aluno foi aprovado ou reprovado. A nota para aprovagao deve ser igual ou superior a 60 pontos. 
+n1 = float(input('Digite a primeira nota: '))
+n2 = float(input('Digite a segunda nota: '))
+n3 = float(input('Digite a terceira nota: '))
+
+media = ((n1 + n2 + (n3 * 2)) / 4)
+
+print(f'A média ponderada das notas {n1} + {n2} + {n3} = {media:2.f}')
+
 
 
 #14. Anota final de um estudante é calculada a partir de trés notas atribuidas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratério, a uma avaliagao semestral e a um exame final. A média das trés notas mencionadas anteriormente obedece aos pesos: Trabalho de Laboratério: 2; Avaliagao Semestral: 3; Exame Final: 5. De acordo com o resultado, mostre na tela se o aluno esta reprovado (média entre 0 e 2,9), de recuperacao (entre 3 e 4,9) ou se foi aprovado. Faça todas as verificagoes necessarias. 
