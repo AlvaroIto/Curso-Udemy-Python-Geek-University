@@ -363,31 +363,106 @@ else:
 # Ter pelo menos 65 anos, 
 # Ou ter trabalhado pelo menos 30 anos, 
 # Ou ter pelo menos 60 anos e trabalhado pelo menos 25 anos.
+'''
+idade = int(input('Digite a idade: '))
+tempo_servico = int(input('Digite o tempo de serviço em anos: '))
+
+if idade > 60 and tempo_servico > 25:
+    print(f'idade: {idade}')
+    print(f'tempo de serviço: {tempo_servico}')
+    print('Pode se aposentar')
+elif idade >= 60:
+    print(f'idade: {idade}')
+    print('Pode se aposentar')
+elif tempo_servico >= 30:
+    print(f'tempo de serviço: {tempo_servico}')
+    print('Pode se aposentar')
+else:
+    print('NÃO pode se aposentar')
+'''
 
 
 #23. Determine se um determinado ano lido é bissexto. Sendo que um ano é bissexto se for divisivel por 400 ou se for divisivel por 4 e nao for divisivel por 100. Por exemplo: 1988, 1992, 1996 
+'''
+ano = int(input('Digite o ano: '))
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print(f'Ano: {ano} é bissexto')
+else:
+    print(f'Ano: {ano} NÃO é bissexto')
+'''
 
 
-#24. Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado possui uma taxa diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS 8%). Faga um programa em que o usudrio entre com o valor e o estado destino do produto e o programa retorne o preco final do produto acrescido do imposto do estado em que ele sera vendido. Se o estado digitado nao for valido, mostrar uma mensagem de erro. 
+#24. Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado possui uma taxa diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS 8%). Faga um programa em que o usuário entre com o valor e o estado destino do produto e o programa retorne o preco final do produto acrescido do imposto do estado em que ele sera vendido. Se o estado digitado nao for valido, mostrar uma mensagem de erro. 
+'''
+valor_produto = float(input('Digite o valor do produto: R$'))
+estado = str(input('Digite a sigla do estado(MG/MS/RJ/SP): ').upper())
+
+if estado not in 'MGMSRJSP':
+    print(f'Estado {estado} inválido')
+else:
+    if estado == 'MG':
+        valor_produto = valor_produto + (valor_produto * 0.07)
+    elif estado == 'MS':
+        valor_produto = valor_produto + (valor_produto * 0.08)
+    elif estado == 'RJ':
+        valor_produto = valor_produto + (valor_produto * 0.15)
+    else:
+        valor_produto = valor_produto + (valor_produto * 0.12)
+
+print(f'Valor do produto: R${valor_produto}')
+print(f'Estado destino: R${estado}')
+print(f'Valor do produto com imposto: R${valor_produto}')
+'''
 
 
-#25. Calcule as raizes da equagao de 2° grau. 
+#25. Calcule as raizes da equação de 2° grau. 
 #Lembrando que: 
 #x = -b +- raiz de delta / 2*a
 #Onde 
 #Delta = b² - 4ac 
 #E ax² + bx + c = 0 representa uma equação de 2° grau. 
 #A variavel a tem que ser diferente de zero. Caso seja igual, imprima a mensagem “Nao é equacao de segundo grau”. 
-# Se A < 0, nao existe real. Imprima a mensagem Não existe raiz. 
-# Se A = (), existe uma raiz real. Imprima a raiz e a mensagem Raiz tunica. 
-# Se A > 0, imprima as duas raizes reais.
+# Se Delta = 0, existe uma raiz real. Imprima a raiz e a mensagem Raiz única. 
+# Se Delta < 0, nao existe real. Imprima a mensagem Não existe raiz. 
+# Se Delta > 0, imprima as duas raizes reais.
+'''
+from math import sqrt
+a = float(input('Digite o valor de A: '))
+b = float(input('Digite o valor de B: '))
+c = float(input('Digite o valor de C: '))
+delta = (b ** 2) - (( 4 * a) * c)
+x1 = (-(b) + sqrt(delta)) / (2 * a)
+x2 = (-(b) - sqrt(delta)) / (2 * a)
 
-
+if a == 0:
+    print(f'ERRO! Valor de {a} precisa ser difente de Zero. Não é equação de segundo grau!')
+if delta < 0:
+    print(f'ERRO! Valor de {delta} menor que Zero. Não existe raiz')
+elif delta == 0:
+    print(f'Raiz única {delta}')
+else:
+    print(f'Valor de a: {a}')
+    print(f'Valor de b: {b}')
+    print(f'Valor de c: {c}')
+    print(f'Valor de delta: {delta}')
+    print(f'Valor da raiz x1: {x1}')
+    print(f'Valor da raiz x2: {x2}')
+'''
 #26. Leia a distancia em Km e a quantidade de litros de gasolina consumidos por um carro em um percurso, calcule o consumo em Km /I e escreva uma mensagem de acordo com a tabela abaixo: 
     #CONSUMO | (Km/) MENSAGEM 
     #menor que 8 Venda o carro! 
-    #entre 8 e l4 Econémico! 
-    #maior que 12 Super econdmico! 
+    #entre 8 e l4 Econômico! 
+    #maior que 12 Super econômico! 
+
+distancia = float(input('Digite a distância em quilômetros: '))
+consumo = float(input('Digite a quantidade de litros de gasolina consumido no percurso: '))
+consumo_por_litro = distancia / consumo
+if consumo_por_litro < 8:
+    print(f'Consumo por litro: {consumo_por_litro} km/l. Venda o carro!')
+elif consumo_por_litro >= 8 and consumo_por_litro <= 14:
+    print(f'Consumo por litro: {consumo_por_litro} km/l. Econômico!')
+else:
+    print(f'Consumo por litro por litro: {consumo_por_litro} km/l. Super Econômico!')
 
 
 #27. Escreva um programa que, dada a idade de um nadador, classifique-o em uma das seguintes categorias: 
