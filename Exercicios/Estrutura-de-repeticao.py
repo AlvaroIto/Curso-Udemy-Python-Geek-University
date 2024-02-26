@@ -453,7 +453,7 @@ else:
     #menor que 8 Venda o carro! 
     #entre 8 e l4 Econômico! 
     #maior que 12 Super econômico! 
-
+'''
 distancia = float(input('Digite a distância em quilômetros: '))
 consumo = float(input('Digite a quantidade de litros de gasolina consumido no percurso: '))
 consumo_por_litro = distancia / consumo
@@ -463,39 +463,158 @@ elif consumo_por_litro >= 8 and consumo_por_litro <= 14:
     print(f'Consumo por litro: {consumo_por_litro} km/l. Econômico!')
 else:
     print(f'Consumo por litro por litro: {consumo_por_litro} km/l. Super Econômico!')
-
+'''
 
 #27. Escreva um programa que, dada a idade de um nadador, classifique-o em uma das seguintes categorias: 
-    #Categoria | Idade 
-    #InfantilA | 5a7 
-    #InfantilB | 8a 10 
-    #JuvenilA | 11213 
-    #JuvenilB | 14 a 17 
+    #Categoria  | Idade 
+    #Infantil A | 5 a 7 
+    #Infantil B | 8 a 10 
+    #Juvenil A  | 11 a 13 
+    #Juvenil B  | 14 a 17 
     #Sênior maiores de 18 anos 
+'''
+idade = int(input('Digite a idade: '))
 
+if idade >= 5 and idade <= 7:
+    print(f'Idade: {idade}. Categoria: Infantil A')
+elif idade >= 8 and idade <= 10:
+    print(f'Idade: {idade}. Categoria: Infantil B')
+elif idade >= 11 and idade <= 13:
+    print(f'Idade: {idade}. Categoria: Juvenil A')
+elif idade >= 14 and idade <= 17:
+    print(f'Idade: {idade}. Categoria: Juvenil B')
+elif idade >= 18:
+    print(f'Idade: {idade}. Sênior')
+else:
+    print(f'Idade: {idade} precisa ser maior que 4 anos')
+'''
 
 #28. Faça um programa que leia trés números inteiros positivos e efetue o cálculo de uma das seguintes médias de acordo com um valor numérico digitado pelo usuário: 
 #(a) Geométrica: raiz cubica de x * y * z 
 #(b) Ponderada: (x + 2*y+3*z) / 6
 #(c) Harmônica: 1((1/x + 1/y + 1/z))
 #(d) Aritmética: (x+y+z) / 3
+'''
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+n3 = int(input('Digite o terceiro número: '))
 
+print('Digite um número para obter a média relacionada:\n'
+      '1- Geométrica\n'
+      '2- Ponderada\n'
+      '3- Harmônica\n'
+      '4- Aritmética')
+op = input()
 
-#29. Faça uma prova de matematica para criangas que estão aprendendo a somar números inteiros menores do que 100. Escolha números aleatérios entre 1 e 100, e mostre na tela a pergunta: qual é a soma de a + b, onde a e b são os nimeros aleatérios. Peça a resposta. Faca cinco perguntas ao aluno, e mostre para ele as perguntas e as respostas corretas, além de quantas vezes o aluno acertou. 
+if op not in '1234':
+    print(f'Opção {op} inválida!')
+else:
+    if op == '1':
+        media = (n1 * n2 * n3) ** (1/3)
+        print(f'Média Geométrica dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+        
+    elif op == '2':
+        media = (n1 + (2 * n2) + (3 * n3)) / 6
+        print(f'Média Ponderada dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+    
+    elif op == '3':
+        media = 1 / ((1 / n1) + (1 / n2) + (1 / n3))
+        print(f'Média Harmônica dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+    else:
+        media = (n1 + n2 + n3) / 3
+        print(f'Média Aritmética dos valores: {n1}, {n2} e {n3} = {media:.2f}')
 
+'''
+#29. Faça uma prova de matematica para crianças que estão aprendendo a somar números inteiros menores do que 100. Escolha números aleatérios entre 1 e 100, e mostre na tela a pergunta: qual é a soma de a + b, onde a e b são os números aleatérios. Peça a resposta. Faca cinco perguntas ao aluno, e mostre para ele as perguntas e as respostas corretas, além de quantas vezes o aluno acertou. 
+'''
+from random import randint
+
+cont_perguntas = 1
+respostas = []
+acertos = 0
+respostas_certas = []
+
+while cont_perguntas <= 5: 
+    n1 = randint(1, 100)
+    n2 = randint(1, 100)
+    print(f'Pergunta {cont_perguntas}:')
+    print(f'Qual o resultado da soma: {n1} + {n2}?')
+    resposta = int(input())
+    respostas.append(resposta)
+    cont_perguntas += 1
+    if resposta == (n1 + n2):
+        acertos += 1
+        respostas_certas.append(resposta)
+        print('Resposta correta!')
+    else:
+        print('Resposta errada!')
+        print(f'Resposta correta: {n1 + n2}')
+print(f'Das 5 perguntas você acertou {acertos}')
+'''
 
 #30. Faga um programa que receba trés números e mostre-os em ordem crescente. 
+'''
+lista_num = []
+while len(lista_num) < 3:
+    num = int(input('Digite um número: '))
+    lista_num.append(num)
 
+print(f'Números digitados: {lista_num}\n'
+      f'Número em ordem crescente: {sorted(lista_num)}')
+'''
 
-#31. Fagaum programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostra qual a classificagao dessa pessoa. 
-    #Altura         Peso 
+#31. Fagaum programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostra qual a classificação dessa pessoa. 
+    #Altura                              Peso 
                     #Até 60 | Entre 60 e 90 (Inclusive) | Acima de 90 
     #Menor que 1,20     A               D                   G 
-    #De 1,20 a1,70      B               E                   H 
+    #De 1,20 a 1,70     B               E                   H 
     #Maior que 1,70     c               F                   I
+'''
+h = float(input('Digite a altura em metros: '))
+p = float(input('Digite o peso em kg: '))
 
+if h < 1.20:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: A')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: D')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: G')
+elif h >= 1.20 and h <= 1.70:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: B')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: E')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: H')
+else:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: C')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: F')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: I')
+'''
 
-#32. Escrever um programa que leia o cédigo do produto escolhido do cardapio de uma lanchonete e a quantidade. O programa deve calcular o valor a ser pago por aquele lanche. Considere que a cada execugao somente sera calculado um pedido. O cardapio da lanchonete segue o padrao abaixo: 
+#32. Escrever um programa que leia o código do produto escolhido do cardapio de uma lanchonete e a quantidade. O programa deve calcular o valor a ser pago por aquele lanche. Considere que a cada execução somente sera calculado um pedido. O cardapio da lanchonete segue o padrao abaixo: 
 #Especificação      Código       Preço 
 #Cachorro Quente    100          1.20 
 #Bauru Simples      101          1.30 
@@ -504,6 +623,60 @@ else:
 #Cheeseburguer      104          1.70 
 #Suco               105          2.20 
 #Refrigerante       106          1.00 
+'''
+print('Especificação      Código       Preço\n' 
+'Cachorro Quente    100          1.20\n'
+'Bauru Simples      101          1.30\n'
+'Bauru com Ovo      102          1.50\n' 
+'Hamburguer         103          1.20\n'
+'Cheeseburguer      104          1.70\n' 
+'Suco               105          2.20\n' 
+'Refrigerante       106          1.00\n' )
+cod_produto = int(input('Digite o código do produto: '))
+qtd = int(input('Digite a quantidade: '))
+if cod_produto == 100:
+    valor_tot = qtd * 1.20
+    print('Produto: Cachorro quente\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 101:
+    valor_tot = qtd * 1.30
+    print('Produto: Bauru simples\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.30\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 102:
+    valor_tot = qtd * 1.50
+    print('Produto: Bauru com ovo\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.50\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 103:
+    valor_tot = qtd * 1.20
+    print('Produto: Hamburguer\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 104:
+    valor_tot = qtd * 1.70
+    print('Produto: Cheeseburguer\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.70\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 105:
+    valor_tot = qtd * 2.20
+    print('Produto: Suco\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$2.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 106:
+    valor_tot = qtd * 1.00
+    print('Produto: Refrigerante\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.00\n'
+          f'Valor Total: R${valor_tot:.2f}')
+'''
 
 
 #33. Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o preço antigo, calcule e escreva o preço novo, e escreva uma mensagem em função do preço novo (de acordo com a segunda tabela). 
@@ -512,6 +685,30 @@ else:
 #entre R$ 50 e R$ 100       10%                   entre R$ 80 e R$ 120 (inclusive)  Normal 
 #acima de R$ 100            15%                   entre R$ 120 e R$ 200 (inclusive) Caro 
 #                                                 acima de R$ 200                   Muito caro 
+'''
+valor_antigo = float(input('Digite o valor antigo: R$'))
+if valor_antigo <= 50:
+    valor_novo = valor_antigo + (valor_antigo * 0.05)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+elif valor_antigo > 50  and valor_antigo <= 100:
+    valor_novo = valor_antigo + (valor_antigo * 0.10)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+else:
+    valor_novo = valor_antigo + (valor_antigo * 0.15)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+
+if valor_novo <= 80:
+    print('Barato')
+elif valor_novo > 80 and valor_novo <= 120:
+    print('Normal')
+elif valor_novo > 120 and valor_novo <= 200:
+    print('Caro')
+else:
+    print('Muito caro')
+'''
 
 
 #34. Leia a nota e o número de faltas de um aluno, e escreva seu conceito. De acordo com a tabela abaixo, quando o aluno tem mais de 20 faltas ocorre uma redução de conceito. 
