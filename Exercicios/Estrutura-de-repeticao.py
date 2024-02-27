@@ -718,9 +718,57 @@ else:
 #5.0 até 7.4                C                                 D
 #4.0 até 4.9                D                                 E
 #0.0 até 3.9                E                                 E
+'''
+nota =  float(input('Digite a nota: '))
+faltas = int(input('Digite o número de faltas: '))
+
+if faltas <= 20:
+    if nota > 9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: A')
+    elif nota >= 7.5 and nota <= 8.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: B')
+    elif nota >= 5.0 and nota <= 7.4:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: C')
+    elif nota >= 4.0 and nota <= 4.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: D')
+    elif nota >= 0 and nota <= 3.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
+else:
+    if nota > 9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: B')
+    elif nota >= 7.5 and nota <= 8.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: C')
+    elif nota >= 5.0 and nota <= 7.4:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: D')
+    elif nota >= 4.0 and nota <= 4.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
+    elif nota >= 0 and nota <= 3.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
+'''
 
 
 #35. Leia uma data e determine se ela é valida. Ou seja, verifique se o més esta entre 1 e 12, e se o dia existe naquele més. Note que Fevereiro tem 29 dias em anos bissextos, e 28 dias em anos nao bissextos. 
+
 
 
 #36. Escreva um programa que, dado o valor da venda, imprima a comissão que deverá ser paga ao vendedor. Para calcular a comissão, considere a tabela abaixo: 
