@@ -768,17 +768,80 @@ else:
 
 
 #35. Leia uma data e determine se ela é valida. Ou seja, verifique se o més esta entre 1 e 12, e se o dia existe naquele més. Note que Fevereiro tem 29 dias em anos bissextos, e 28 dias em anos nao bissextos. 
+'''
+dia = int(input('Digite o dia: '))
+mes = int(input('Digite o mes: '))
+ano = int(input('Digite o ano: '))
+mes_30 = [4, 6, 9, 11]
 
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    if mes == 2:
+        if dia > 29:
+            print('Dia inválido! Fevereiro possui 29 dias!')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')            
+
+else:
+    if mes == 2:
+        if dia > 28:
+            print('Dia inválido! Não é ano bissexto')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                    print(f'{dia}/{mes}/{ano}')                 
+        else:
+            if dia > 31:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 31 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')                 
+'''
 
 
 #36. Escreva um programa que, dado o valor da venda, imprima a comissão que deverá ser paga ao vendedor. Para calcular a comissão, considere a tabela abaixo: 
 #Venda mensal                                               Comissão 
 #Maior ou igual a R$100.000,00                              R$700,00 + 16% das vendas 
-#Menor que R$100.000,00 e maior ou igual a R$80.000,00      R$650,00 +14% das vendas 
-#Menor que R$80.000,00 e maior ou igual a R$60.000,00       R$600,00 +14% das vendas 
-#Menor que R$60.000,00 e maior ou igual a R$40.000,00       R$550,00 +14% das vendas 
-#Menor que R$40.000,00 e maior ou igual a R$20.000,00       R$500,00 +14% das vendas 
-#Menor que R$20.000,00                                      R$400,00 +14% das vendas 
+#Menor que R$100.000,00 e maior ou igual a R$80.000,00      R$650,00 + 14% das vendas 
+#Menor que R$80.000,00 e maior ou igual a R$60.000,00       R$600,00 + 14% das vendas 
+#Menor que R$60.000,00 e maior ou igual a R$40.000,00       R$550,00 + 14% das vendas 
+#Menor que R$40.000,00 e maior ou igual a R$20.000,00       R$500,00 + 14% das vendas 
+#Menor que R$20.000,00                                      R$400,00 + 14% das vendas 
+'''
+valor_mensal = float(input('Digite o valor da venda: R$'))
+if valor_mensal >= 100000.00:
+    comissao = 700 + (valor_mensal * 0.16)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 100000.00 and valor_mensal >= 80000.00:
+    comissao = 650 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 80000.00 and valor_mensal >= 60000.00:
+    comissao = 600 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')    
+elif valor_mensal < 60000.00 and valor_mensal >= 40000.00:
+    comissao = 550 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 40000.00 and valor_mensal >= 20000.00:
+    comissao = 500 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')    
+else:
+    comissao = 400 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+'''
 
 
 #37. As tarifas de certo parque de estacionamento são as seguintes: 
@@ -786,10 +849,90 @@ else:
 # 3º e 4º hora - R$ 1,40 cada 
 # 5º hora e seguintes - R$ 2,00 cada 
 #O número de horas a pagar é sempre inteiro e arredondado por excesso. Deste modo, quem estacionar durante 61 minutos pagará por duas horas, que é o mesmo que pagaria se tivesse permanecido 120 minutos. Os momentos de chegada ao parque e partida deste são apresentados na forma de pares de inteiros, representando horas e minutos. Por exemplo, o par 12 50 representará “dez para a uma da tarde”. Pretende-se criar um programa que, lidos pelo teclado os momentos de chegada e de partida, escreva na tela o preço cobrado pelo estacionamento. Admite-se que a chegada e a partida se dão com intervalo não superior a 24 horas. Portanto, se uma dada hora de chegada for superior à da partida, isso não é uma situação de erro, antes significará que a partida ocorreu no dia seguinte ao da chegada. 
+'''
+hora_chegada = int(input('Digite a hora de chegada: '))
+minuto_chegada = int(input('Digite o minuto de chegada: '))
+hora_saida = int(input('Digite a hora de saída: '))
+minuto_saida = int(input('Digite o minuto de saída: '))
+#arredonar minuto em hora
+if minuto_chegada > 0:
+    arredonda_hora_chegada = hora_chegada + 1
+else:
+    arredonda_hora_chegada = hora_chegada
+if minuto_saida > 0:
+    arredonda_hora_saida = hora_saida + 1
+else:
+    arredonda_hora_saida = hora_saida
+
+#verificar tempo de permanência
+if arredonda_hora_chegada > arredonda_hora_saida:
+    permanencia = arredonda_hora_chegada - arredonda_hora_saida
+else:
+    permanencia = arredonda_hora_saida - arredonda_hora_chegada
+
+#Calcular valor
+if permanencia == 0:
+    valor = 1
+elif permanencia <= 2:
+    valor = permanencia
+elif permanencia > 2 and permanencia <= 4:
+    valor = permanencia * 1.40
+else:
+    valor = permanencia * 2
+
+print(f'Hora de chegada {hora_chegada}:{minuto_chegada}\n'
+      f'Hora de saída {hora_saida}:{minuto_saida}\n'
+      f'Tempo de permanência {permanencia} hora(s)\n'
+      f'Valor R${valor:.2f}')
+'''
 
 
 #38. Leia uma data de nascimento de uma pessoa fornecida através de três números inteiros: 
 #Dia, Mês e Ano. Teste a validade desta data para saber se esta é uma data válida. Teste se o dia fornecido é um dia válido: dia > O, dia < 28 para o mês de fevereiro (29 se o ano for bissexto), dia < 30 em abril, junho, setembro e novembro, dia < 31 nos outros meses. Teste a validade do més: més > 0 e mês < 13. Teste a validade do ano: ano < ano atual (use uma constante definida com o valor igual a 2008). Imprimir: “data válida” ou “data inválida” no final da execução do programa.
+
+dia = int(input('Digite o dia: '))
+mes = int(input('Digite o mes: '))
+ano = int(input('Digite o ano: '))
+mes_30 = [4, 6, 9, 11]
+data_atual = '2722024'
+
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    if mes == 2:
+        if dia > 29:
+            print('Dia inválido! Fevereiro possui 29 dias!')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')            
+
+else:
+    if mes == 2:
+        if dia > 28:
+            print('Dia inválido! Não é ano bissexto')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                    print(f'{dia}/{mes}/{ano}')                 
+        else:
+            if dia > 31:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 31 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')     
+
+if ano > 2008:
+    print('Ano inválido')
+elif ano == 2008:
+    if dia >= 28:
+        if mes == 2:
+            print('Data ')
 
 
 #39. Uma empresa decide dar um aumento aos seus funcionarios de acordo com uma tabela que considera o salario atual e o tempo de servico de cada funcionario. Os funcionarios com menor salario terao um aumento proporcionalmente maior do que os funcionarios com um salario maior, e conforme o tempo de servi¢o na empresa, cada funcionario irá receber um bônus adicional de salario. Faça um programa que leia: 
