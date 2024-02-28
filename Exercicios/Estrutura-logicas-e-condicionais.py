@@ -1,489 +1,1060 @@
-#1. Faça um programa que leia um número inteiro e o imprima. 
+#1. Faga um programa que receba dois números e mostre qual deles é o maior. 
+'''
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+if n1 > n2:
+    print(f'{n1} é maior que {n2}')
+elif n1 == n2:
+    print(f'{n1} e {n2} são iguais')
+else:
+    print(f'{n2} é maior que {n1}')
+'''
+
+#2. Leia um numero fornecido pelo usuário. Se esse número for positivo, calcule a raiz  quadrada do número. Se o número for negativo, mostre uma mensagem dizendo que o número é invalido. 
+'''
+from math import sqrt
+num = int(input('Digite um número: '))
+if num > 0:
+    print(f'A raiz quadrada de {num} é {sqrt(num):.2f}')
+else:
+    print(f'Número inválido!')
+'''
+
+#3. Leia um numero real. Se o número for positivo imprima a raiz quadrada. Do contrario, imprima o numero ao quadrado. 
+'''
+from math import sqrt
+num = int(input('Digite um número: '))
+if num > 0:
+    print(f'A raiz quadrada de {num} é {sqrt(num):.2f}')
+else:
+    print(f'O quadrado de {num} é {num ** 2}')
+'''
+
+#4. Faga um programa que leia um número e, caso ele seja positivo, calcule e mostre: 
+# O número digitado ao quadrado 
+# A raiz quadrada do número digitado 
+'''
+from math import sqrt
+num = int(input('Digite um número: '))
+if num > 0:
+    print(f'A raiz quadrada de {num} é {sqrt(num):.2f}')
+    print(f'O quadrado de {num} é {num ** 2}')
+else:
+    print(f'Número inválido!')
+'''
+
+#5. Faça um programa que receba um número inteiro e verifique se este nimero é par ou impar. 
 '''
 num = int(input('Digite um número: '))
-print(f'Número digitado: {num}')
+if num % 2 == 0:
+    print(f'{num} é par')
+else:
+    print(f'{num} é ímpar')
 '''
 
-#2. Faça um programa que leia um número real e o imprima. 
+#6. Escreva um programa que, dados dois números inteiros, mostre na tela o maior deles, assim como a diferenca existente entre ambos. 
 '''
-num = float(input('Digite um número real: '))
-print(f'Número digitado: {num}')
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+
+if n1 > n2:
+    print(f'{n1} é maior que {n2}')
+    print(f'{n1} - {n2} = {n1 - n2}')
+elif n1 == n2:
+    print(f'{n1} e {n2} são iguais')
+    print(f'{n1} - {n2} = {n1 - n2}')
+else:
+    print(f'{n2} é maior que {n1}')
+    print(f'{n2} - {n1} = {n2 - n1}')
+'''
+#7. Faga um programa que receba dois números e mostre o maior. Se por acaso, os dois números forem iguais, imprima a mensagem Números iguais. 
+'''
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+
+if n1 > n2:
+    print(f'{n1} é maior que {n2}')
+elif n1 == n2:
+    print(f'{n1} e {n2} são iguais')
+else:
+    print(f'{n2} é maior que {n1}')
 '''
 
-#3. Peça ao usuário para digitar três valores inteiros e imprima a soma deles. 
+#8. Faga um programa que leia 2 notas de um aluno, verifique se as notas sao validas e exiba na tela a média destas notas. Uma nota valida deve ser,  obrigatoriamente, um valor entre 0.0 e 10.0, onde caso a nota nao possua um valor valido, este fato deve ser informado ao usuario e o programa termina.
 '''
-v1 = int(input('Digite o primeiro número: '))
-v2 = int(input('Digite o segundo número: '))
-v3 = int(input('Digite o terceiro número: '))
-soma = v1 + v2 + v3
-print(f'{v1} + {v2} + {v3} = {soma}')
+n1 = float(input('Digite a primeira nota: '))
+n2 = float(input('Digite a segunda nota: '))
+
+if n1 < 0 or n1 > 10 or n2 < 0 or n2 > 10:
+    print(f'Nota inválida')
+else:
+    print(f'Média: {(n1 + n2) / 2}')
 '''
 
-#4. Leia um número real e imprima o resultado do quadrado desse número. 
+#9. Leia o salário de um trabalhador e o valor da prestação de um empréstimo. Se a prestação for maior que 20% do salário imprima: Empréstimo não concedido, caso contrério imprima: Empréstimo concedido.
 '''
-num = float(input('Digite um número: '))
-quadrado = num ** 2
-print(f'O quadrado de {num} é: {quadrado}')
-'''
-
-#5. Leia um número real e imprima a quinta parte deste número. 
-'''
-num = float(input('Digite um número: '))
-quinta = num / 5
-print(f'A quinta parte de {num} é: {quinta}')
-'''
-
-#6. Leia uma temperatura em graus Celsius e apresente-a convertida em graus Fahrenheit. A fórmula de conversão é: F = C'*(9.0/5.0) +32.0, sendo F atemperatura em Fahrenheit e C atemperatura em Celsius. 
-'''
-temp_c = float(input('Digite a temperatura em graus Celsius: '))
-temp_f = temp_c * (9 / 5) + 32
-print(f'A temperatura {temp_c} Celsius corresponde a {temp_f:.2f} Fahrenheit')
+salário = float(input('Digite o salário: R$'))
+prestacao = float(input('Digite o valor da prestação: R$'))
+limite = salário * 0.2
+if prestacao > limite:
+    print(f'Salário: R${salário}')
+    print(f'Prestação solicitada: R${prestacao}')
+    print(f'Limite  para prestação: R${limite}')
+    print('Empréstimo não concedido, prestação acima de 20% do salário')
+else:
+    print(f'Salário: R${salário}')
+    print(f'Prestação solicitada: R${prestacao}')
+    print(f'Limite  para prestação: R${limite}')
+    print('Empréstimo concedido!')
 '''
 
-#7. Leia uma temperatura em graus Fahrenheit e apresente-a convertida em graus Celsius. A férmula de conversão é: C = 5.0 = (F — 32.0)/9.0, sendo C a temperatura #em Celsius e F atemperatura em Fahrenheit. 
+#10. Faga um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal, utilizando as seguintes formulas (onde h corresponde a altura):
+#Homens: (72.7 * h) — 58 
+#Mulheres: (62.1 * h) — 44.7
 '''
-temp_f = float(input('Digite a temperatura em graus Fahrenheit: '))
-temp_c = 5 * (temp_f - 32) / 9
-print(f'A temperatura {temp_f} Fahrenheit corresponde a {temp_c:.2f} Celsius')
+h = float(input('Digite a altura em metros: '))
+#verificar se sexo foi digitado corretamente
+while True:
+    s = str(input('Digite o sexo (M/F): ')).lower()
+    if s not in 'MmFf':
+        print('Sexo incorreto, tente novamente')
+    else:
+        break
+
+if s == 'm':
+    peso_ideal = (72.6 * h) - 58
+else:
+    peso_ideal = (62.1 * h) - 44.7
+
+print(f'Sexo = {s}')
+print(f'Altura = {h:.2f}mts')
+print(f'Peso ideal = {peso_ideal:.2f}kg')
 '''
 
-#8. Leia uma temperatura em graus Kelvin e apresente-a convertida em graus Celsius. A fórmula de conversao é: C = K — 273.15, sendo C a temperatura em Celsius e #K a temperatura em Kelvin. 
+
+#11. Escreva um programa que leia um número inteiro maior do que zero e devolva, na tela, a soma de todos os seus algarismos. Por exemplo, ao número 251 corresponderá o valor 8(2+5+1). Se o número lido não for maior do que zero, o programa terminara com a mensagem “Número inválido”. 
 '''
-temp_k = float(input('Digite a temperatura em graus Kelvin: '))
-temp_c = temp_k - 273.15
-print(f'A temperatura {temp_k} Kelvin corresponde a {temp_c} Celsius')
+num = int(input('Digite um número maior que 0: '))
+soma = 0
+#verificar se número é maior que 0
+if num <= 0:
+    print(f'Número {num} inválido!')
+else:
+    #transformar numeros em lista para iterar
+    lista_num = list(str(num))
+    for n in lista_num:
+        soma += (int(n))
+
+print(f'A soma dos algarismos digitados ({num}) é: {soma}')
 '''
 
-#9. Leia uma temperatura em graus Celsius e apresente-a convertida em graus Kelvin. A fórmula de conversao é: K = C + 273.15, sendo C a temperatura em Celsius e #K a temperatura em Kelvin. 
+
+#12. Ler um número inteiro. Se o número lido for negativo, escreva a mensagem “Número invalido”. Se o número for positivo, calcular o logaritmo deste numero. 
 '''
-temp_c = float(input('Digite a temperatura em graus Celsius: '))
-temp_k = temp_c + 273.15
-print(f'A temperatura {temp_c} Celsius corresponde a {temp_k} Kelvin')
+from math import log
+num = int(input('Digite um número inteiro: '))
+if num < 0:
+    print(f'Número {num} inválido')
+else:
+    logaritmo = log(num)
+    print(f'O logaritmo de {num} é: {logaritmo:.2f}')
 '''
 
-#10. Leia uma velocidade em km/h (quilômetros por hora) e apresente-a convertida em m/s (metros por segundo). A fórmula de conversão é: M = K /3.6, sendo K a #velocidade em km/h e M em m/s.
-'''
-vel_km = float(input('Digite a velocidade em km/h: '))
-vel_ms = vel_km / 3.6
-print(f'A velocidadde {vel_km}km/h em metros por segundo é: {vel_ms:.2f}m/s')
-'''
 
-#11. Leia uma velocidade em m/s (metros por segundo) e apresente-a convertida em km/h (quilômetros por hora). A fórmula de conversão é: K = M * 3.6, sendo K a #velocidade em km/h e M em ms. 
-'''
-vel_ms = float(input('Digite a velocidade em m/s: '))
-vel_km = vel_ms * 3.6
-print(f'A velocidadde {vel_ms}m/s em quilômetros por hora é: {vel_km:.2f}km/h')
-'''
-
-#12. Leia uma distância em milhas e apresente-a convertida em quilômetros. A fórmula de conversão é: K = 1.61 * M, sendo K a distância em quilômetros e M em #milhas. 
-'''
-milhas = float(input('Digite a distância em milhas: '))
-km = 1.61 * milhas
-print(f'A distância em milhas: {milhas} corresponde a {km} quilômetros')
-'''
-
-#13. Leia uma distância em quilômetros e apresente-a convertida em milhas. A fórmula de conversão é: M = K / 1.61 sendo K a distância em quilômetros e A/ em milhas. 
-'''
-km = float(input('Digite a distância em quilômetros: '))
-milhas = km / 1.61
-print(f'A distância em quilômetros {km} corresponde a {milhas} milhas')
-'''
-
-#14. Leia um ângulo em graus e apresente-o convertido em radianos. A fórmula de conversão é: R= G*3.14/180, sendo G o ângulo em graus e R em radianos e x = 3.14. 
-'''
-graus = float(input('Digite o ângulo em graus: '))
-rad = graus * 3.14 / 180
-print(f'O ângulo {graus} gruas, corresponde a {rad} radianos')
-'''
-
-#15. Leia um ângulo em radianos e apresente-o convertido em graus. A fórmula de conversão é: G = R*180/3.14, sendo G o angulo em graus e R em radianos e x = 3.14. 
-'''
-rad = float(input('Digite o ângulo em radiano: '))
-graus = rad * 180 / 3.14
-print(f'O ângulo radiano {rad} em graus é: {graus}')
-'''
-
-#16. Leia um valor de comprimento em polegadas e apresente-o convertido em centímetros. A fórmula de conversão é: C = P *2,54, sendo € o comprimento em #centimetros e P o comprimento em polegadas. 
-'''
-pol = float(input('Digite o comprimento em polegadas: '))
-cm = pol * 2.54
-print(f'{pol} polegadas convertida para centímetros: {cm}')
-'''
-
-#17. Leia um valor de comprimento em centímetros e apresente-o convertido em polegadas. A fórmula de conversão é: P = C / 2.54 sendo C o comprimento em centimetros e P o comprimento em polegadas. 
-'''
-cm = float(input('Digite o comprimento em centímetros: '))
-pol = cm / 2.54
-print(f'{cm} centímetros convertido para polegadas: {pol}')
-'''
-
-#18. Leia um valor de volume em metros cubicos m” e apresente-o convertido em litros. A formula de conversao é: L = 1000 * M, sendo L o volume em litros e M o #volume em metros cubicos. 
-'''
-m = float(input('Digite o volume em metros cúbicos: '))
-l = 1000 * m
-print(f'{m} metros cubicos em litros é: {l}')
-'''
-
-#19. Leia um valor de volume em litros e apresente-o convertido em metros cúbicos m®. A formula de conversao é: M = l / 1000, sendo L o volume em litros e M o volume #em metros cubicos. 
-'''
-l = float(input('Digite o volume em litros: '))
-m = l / 1000
-print(f'O volume {l} litros em metros cubicos é: {m}')
-'''
-
-#20. Leia um valor de massa em quilogramas e apresente-o convertido em libras. A formula de conversão é: L = k / 0.45, sendo K a massa em quilogramas e L a massa 
-# em #libras.
-'''
-k = float(input('Digite o valor em quilogramas: '))
-l = k / 0.45
-print(f'O valor {k} quilogramas em libras é: {l:.2f}')
-'''
-
-#21. Leia um valor de massa em libras e apresente-o convertido em quilogramas. A fórmula de conversão é: K = L*0,45, sendo K a massa em quilogramas e L a massa #em libras. 
-'''
-l = float(input('Digite o valor em libras: '))
-k = l * 0.45
-print(f'O valor {l} libras em quilogramas é: {k}')
-'''
-
-#22. Leia um valor de comprimento em jardas e apresente-o convertido em metros. A fórmula de conversão é: M = 0,91 * J, sendo J o comprimento em jardas e M o #comprimento em metros. 
-'''
-j = float(input('Digite o comprimento em jardas: '))
-m = 0.91 * j
-print(f'O valor {j} jardas em metros é: {m}')
-'''
-
-#23. Leia um valor de comprimento em metros e apresente-o convertido em jardas. A fórmula de conversão é: J = m / 0.91 sendo J o comprimento em jardas e M o #comprimento em metros. 
-'''
-m = float(input('Digite o comprimento em metros: '))
-j = m / 0.91
-print(f'O valor {m} metros em jardas é: {j:.2f}')
-'''
-
-#24. Leia um valor de área em metros quadrados m2 e apresente-o convertido em acres. A férmula de conversao é: A = M * 0,000247, sendo M a área em metros #quadrados e A a área em acres. 
-'''
-m = float(input('Digite a área em metros quadrados: '))
-a = m * 0.000247
-print(f'A área {m} metros quadrados em acres é: {a}')
-'''
-
-#25. Leia um valor de área em acres e apresente-o convertido em metros quadrados m2. A fórmula de conversão é: M = A * 4048,58, sendo M a área em metros #quadrados e A a área em acres. 
-'''
-a = float(input('Digite a área em acres: '))
-m = a * 4048.58
-print(f'A área {a} acres em metros quadrados é: {m}')
-'''
-
-#26. Leia um valor de área em metros quadrados m2 e apresente-o convertido em hectares. A fórmula de conversão é: H = M * 0,0001, sendo M a área em metros #quadrados e H a área em hectares.
-'''
-m = float(input('Digite a área em metros quadrados: '))
-#h = m * 0.0001
-print(f'A área {m} metros quadrados em hectares é: {h}')
-'''
-
-#27. Leia um valor de área em hectares e apresente-o convertido em metros quadrados m2. A fórmula de conversão é: M = H * 10000, sendo M a área em metros #quadrados e H a área em hectares. 
-'''
-h = float(input('Digite a área em hectares: '))
-m = h * 10000
-print(f'A área {h} hectares em metros quadrados é: {m}')
-'''
-
-#28. Faça a leitura de três valores e apresente como resultado a soma dos quadrados dos três valores lidos. 
-'''
-v1 = int(input('Digite o primeiro valor: '))
-v2 = int(input('Digite o segundo valor: '))
-v3 = int(input('Digite o terceiro valor: '))
-res = (v1 **2) + (v2 **2) + (v3 **2)
-print(f'A soma dos quadrados dos três valores é: {res}')
-'''
-
-#29. Leia quatro notas, calcule a média aritmética e imprima o resultado. 
+#13. Faga um algoritmo que calcule a média ponderada das notas de 3 provas. A primeira e a segunda prova tém peso 1 e a terceira tem peso 2. Ao final, mostrar a média do aluno e indicar se o aluno foi aprovado ou reprovado. A nota para aprovagao deve ser igual ou superior a 60 pontos. 
 '''
 n1 = float(input('Digite a primeira nota: '))
 n2 = float(input('Digite a segunda nota: '))
 n3 = float(input('Digite a terceira nota: '))
-n4 = float(input('Digite a quarta nota: '))
-m = (n1 + n2 + n3 + n4) / 4
-print(f'A média aritméticas das notas é: {m:.2f}')
+
+media = ((n1 + n2 + (n3 * 2)) / 4)
+
+print(f'A média ponderada das notas {n1} + {n2} + {n3} = {media}')
 '''
 
-#30. Leia um valor em real e a cotação do dólar. Em seguida, imprima o valor correspondente em dólares.
+
+#14. A nota final de um estudante é calculada a partir de trés notas atribuidas entre o intervalo de 0 até 10, respectivamente, a um trabalho de laboratério, a uma avalição semestral e a um exame final. A média das trés notas mencionadas anteriormente obedece aos pesos: Trabalho de Laboratério: 2; Avaliação Semestral: 3; Exame Final: 5. De acordo com o resultado, mostre na tela se o aluno esta reprovado (média entre 0 e 2,9), de recuperacao (entre 3 e 4,9) ou se foi aprovado. Faça todas as verificagoes necessarias. 
 '''
-r = float(input('Digite o valor em real: R$'))
-cot_d = float(input('Informe o valor do dolar em real: R$'))
-d = r / cot_d
-print(f'Com a cotação do dólar a R${cot_d}; R${r} equivale a ${d}')
+lab = float(input('Digite a primeira nota: '))
+ava = float(input('Digite a segunda nota: '))
+exa = float(input('Digite a terceira nota: '))
+peso_lab = 2
+peso_ava = 3
+peso_exa = 5
+
+media = (lab * peso_lab + ava * peso_ava + exa * peso_exa) / (peso_lab + peso_ava + peso_exa)
+
+if media <= 2.9:
+    print(f'Média:{media}. Reprovado!')
+elif media >= 3 and media <= 4.9:
+    print(f'Média:{media}. Recuperação!')
+else:
+    print(f'Média:{media}. Aprovado')
 '''
 
-#31. Leia um número inteiro e imprima o seu antecessor e 0 seu sucessor. 
+
+#15. Usando switch, escreva um programa que leia um inteiro entre 1 e 7 e imprima o dia da semana correspondente a este numero. Isto é, domingo se 1, segunda -feira se 2, e assim por diante. 
 '''
-num = int(input('Digite um número inteiro: '))
-print(f'Número digitado: {num}')
-print(f'Antecessor: {num - 1}')
-print(f'Sucessor: {num + 1}')
+num = int(input('Digite um número de 1 a 7: '))
+if num not in range(1,8,1):
+    print(f'Número {num} precisa estar entre 1 e 7')
+else:
+    if num == 1:
+        print('Domingo')
+    elif num == 2:
+        print('Segunda-feira')
+    elif num == 3:
+        print('Terça-feira')
+    elif num == 4:
+        print('Quarta-feira')
+    elif num == 5:
+        print('Quinta-feira')
+    elif num == 6:
+        print('Sexta-feira')
+    else:
+        print('Sábado')
 '''
 
-#32. Leia um nimero inteiro e imprima a soma do sucessor de seu triplo com o antecessor de seu dobro. 
+
+#16. Usando switch, escreva um programa que leia um inteiro entre 1 e 12 e imprima o mês correspondente a este numero. Isto é, janeiro se 1, fevereiro se 2, e assim por diante. 
 '''
-num = int(input('Digite um número inteiro: '))
-t = (num * 3) + 1
-d = (num * 2) - 1
-print(f'Número digitado: {num}')
-print(f'Sucessor do seu triplo: {t}')
-print(f'antecessor do seu dobro: {d}')
-print(f'Soma do sucessor de seu triplo com antecessor do seu dobro: {t + d}')
+num = int(input('Digite um número de 1 a 12: '))
+if num not in range(1,12,1):
+    print(f'Número {num} precisa estar entre 1 e 12')
+else:
+    if num == 1:
+        print('Janeiro')
+    elif num == 2:
+        print('Fevereiro')
+    elif num == 3:
+        print('Março')
+    elif num == 4:
+        print('Abril')
+    elif num == 5:
+        print('Maio')
+    elif num == 6:
+        print('Junho')
+    elif num == 7:
+        print('Julho')
+    elif num == 8:
+        print('Agosto')
+    elif num == 9:
+        print('Setembro')
+    elif num == 10:
+        print('Outubro')
+    elif num == 11:
+        print('Novembro')
+    else:
+        print('Dezembro')
 '''
 
-#33. Leia o tamanho do lado de um quadrado e imprima como resultado a sua area. 
+#17. Faça um programa que calcule e mostre a área de um trapézio. Sabe-se que: 
+#A = (basemaior + basemenor) * altura / 2
+#Lembre-se a base maior e a base menor devem ser números maiores que zero.
 '''
-l = float(input('Digite o lado de um quadrado: '))
-area = l ** 2
-print(f'A área de um quadrado de lado {l} é: {area}')
+base_menor = float(input('Digite o valor da base menor: '))
+base_maior = float(input('Digite o valor da base maior: '))
+altura = float(input('Digite a altura do trapézio: '))
+area = ((base_maior + base_menor) * altura) / 2
+if base_maior <= 0  or base_menor <= 0:
+    print('Bases devem ser maior que 0')
+else:
+    print(f'área do trapézio é: {area}')
+
 '''
 
-#34. Leia o valor do raio de um circulo e calcule e imprima a area do circulo correspondente. A área do circulo é 3.14 * raio ao quadrado, considere = = 3.141592.
+
+#18. Faga um programa que mostre ao usuario um menu com 4 opgoes de operagoes matematicas (as basicas, por exemplo). O usuário escolhe uma das opções e o seu programa então pede dois valores numéricos e realiza a operação, mostrando o resultado e saindo. 
 '''
-r = float(input('Digite o raio de um círculo: '))
-area = 3.14 * (r ** 2)
-print(f'A área de um círculo de raio {r} é: {area}')
+print(
+    'OPERAÇÕES MATEMÁTICAS:\n'
+    'SOMA: +\n'
+    'SUBRATRAÇÃO: -\n'
+    'MULTIPLICAÇÃO: *\n'
+    'DIVISÃO: /\n'
+    'ESCOLHA UMA OPÇÃO:'
+)
+op = input()
+n1 = float(input('Digite o primeiro valor: '))
+n2 = float(input('Digite o segundo valor: '))
+
+if op == '+':
+    print(f'{n1} {op} {n2} = {n1 + n2}')
+elif op == '-':
+    print(f'{n1} {op} {n2} = {n1 - n2}')
+elif op == '*':
+    print(f'{n1} {op} {n2} = {n1 * n2}')
+else:
+    print(f'{n1} {op} {n2} = {n1 / n2:.2f}')
 '''
 
-#35. Sejam a e b os catetos de um triângulo, onde a hipotenusa é obtida pela equaçao: 
-#hipotenusa = raiz de a ao quadrado + b ao quadrado. Faga um programa que receba os valores de a e b e calcule o valor da hipotenusa através da equação. Imprima o resultado dessa operagao. 
+#19. Faga um programa para verificar se um determinado número inteiro e divisivel por 3 ou 5, mas nao simultaneamente pelos dois. 
 '''
-from math import sqrt
-a = float(input('Digite o valor de a: '))
-b = float(input('Digite o valor de b: '))
-hip = sqrt((a ** 2 + b ** 2))
-print(hip)
+num = int(input('digite um número: '))
+div3 = num % 3 == 0
+div5 = num % 5 == 0
+
+if div3 and div5:
+    print(f'ERRO! {num} é divisível por 3 e 5 simultaneamente')
+else:
+    if div3:
+        print(f'{num} é divisível por 3')
+    elif div5:
+        print(f'{num} é divisível por 5')
 '''
 
-#36. Leia a altura e o raio de um cilindro circular e imprima o volume do cilindro. O volume de um cilindro circular é calculado por meio da seguinte férmula: V = 3,14 * r ao quadrado * altura, onde 7 = 3.141592.
+
+#20. Dados trés valores, A, B, C, verificar se eles podem ser valores dos lados de um triângulo e, se forem, se é um tridngulo escaleno, equilatero ou iséscele, considerando os seguintes conceitos: 
+# O comprimento de cada lado de um triangulo é menor do que a soma dos outros dois lados. 
+# Chama-se equilatero o triangulo que tem trés lados iguais. 
+# Denominam-se isosceles o triangulo que tem o comprimento de dois lados iguais. 
+# Recebe o nome de escaleno o tridngulo que tem os trés lados diferentes. 
 '''
-h = float(input('Digite a altura do cilindro: '))
-r = float(input('Digite o raio do cilindro: '))
-v = 3,14 * (r ** 2) * h 
-print(f'O volume de um cilindro de altura:{h} e raio:{r} é: {v}')
+lado_a = int(input('Digite o primeiro lado do triângulo: '))
+lado_b = int(input('Digite o segundo lado do triângulo: '))
+lado_c = int(input('Digite o terceiro lado do triângulo: '))
+
+if lado_a < lado_b + lado_c and lado_b < lado_a + lado_c and lado_c < lado_a + lado_b:
+    print(f'Os lados {lado_a} {lado_b} e {lado_c} podem formar um triângulo')
+else:
+    print(f'Os lados {lado_a} {lado_b} e {lado_c} NÃO podem formar um triângulo')
+'''
+     
+
+#21. Escreva o menu de opções abaixo. Leia a opção do usuário e execute a operação escolhida. Escreva uma mensagem de erro se a opção for invalida. 
+    #Escolha a opção: 
+    #1- Soma de 2 números. 
+    #2- Diferença entre 2 números (maior pelo menor). 
+    #3- Produto entre 2 números. 
+    #4- Divisão entre 2 números (o denominador não pode ser zero). 
+    #Opção
+'''
+print('ESCOLHA UMA OPÇÃO:\n'
+      '1- Soma de 2 números\n'
+      '2- Diferença entre 2 números (maior pelo menor)\n'
+      '3- Produto entre 2 números\n'
+      '4- Divisão entre 2 números (o denomindador não pode ser 0)'
+      )
+op = input('Opção: ')
+
+if op not in '1234':
+    print('Opção inválida!')
+else:
+    num1 = int(input('Digite o primeiro número: '))
+    num2 = int(input('Digite o segundo número: '))
+    if op == '1':
+        print(f'{num1} + {num2} = {num1 + num2}')
+    elif op == '2':
+        if num2 < num1:
+            print(f'{num1} - {num2} = {num1 - num2}')
+        elif num1 < num2:
+            print(f'{num2} - {num1} = {num2 - num1}')
+    elif op == '3':
+        print(f'{num1} * {num2} = {num1 * num2}')
+    else:
+        if num2 == 0:
+            print(f'Erro! O denominador não pode ser zero')
+        else:
+            print(f'{num1} / {num2} = {num1 / num2:.2f}')
 '''
 
-#37. Faça um programa que leia o valor de um produto e imprima o valor com desconto, tendo em vista que o desconto foi de 12% 
+
+#22. Leia a idade e o tempo de servico de um trabalhador e escreva se ele pode ou não se aposentar. As condições para aposentadoria são 
+# Ter pelo menos 65 anos, 
+# Ou ter trabalhado pelo menos 30 anos, 
+# Ou ter pelo menos 60 anos e trabalhado pelo menos 25 anos.
+'''
+idade = int(input('Digite a idade: '))
+tempo_servico = int(input('Digite o tempo de serviço em anos: '))
+
+if idade > 60 and tempo_servico > 25:
+    print(f'idade: {idade}')
+    print(f'tempo de serviço: {tempo_servico}')
+    print('Pode se aposentar')
+elif idade >= 60:
+    print(f'idade: {idade}')
+    print('Pode se aposentar')
+elif tempo_servico >= 30:
+    print(f'tempo de serviço: {tempo_servico}')
+    print('Pode se aposentar')
+else:
+    print('NÃO pode se aposentar')
+'''
+
+
+#23. Determine se um determinado ano lido é bissexto. Sendo que um ano é bissexto se for divisivel por 400 ou se for divisivel por 4 e nao for divisivel por 100. Por exemplo: 1988, 1992, 1996 
+'''
+ano = int(input('Digite o ano: '))
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    print(f'Ano: {ano} é bissexto')
+else:
+    print(f'Ano: {ano} NÃO é bissexto')
+'''
+
+
+#24. Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado possui uma taxa diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS 8%). Faga um programa em que o usuário entre com o valor e o estado destino do produto e o programa retorne o preco final do produto acrescido do imposto do estado em que ele sera vendido. Se o estado digitado nao for valido, mostrar uma mensagem de erro. 
 '''
 valor_produto = float(input('Digite o valor do produto: R$'))
-valor_desconto = valor_produto - (valor_produto * 0.12)
-print(f'Valor do produto: R${valor_produto}')
-print(f'Valor do produto com desconto: R${valor_desconto}')
-'''
+estado = str(input('Digite a sigla do estado(MG/MS/RJ/SP): ').upper())
 
-#38. Leia o salario de um funcionario. Calcule e imprima o valor do novo salário, sabendo que ele recebeu um aumento de 25%. 
-'''
-sal = float(input('Digite o salário do funcionário: R$'))
-aumento = sal + (sal * 0.25)
-print(f'Salário do funcionário: R${sal}')
-print(f'Salário do funcionário com aumento: R${aumento:.2f}')
-'''
-
-#39. A importancia de R$ 780.000,00 sera dividida entre trés ganhadores de um concurso. Sendo que da quantia total: 
-# O primeiro ganhador recebera 46%; 
-# O segundo recebera 32%; 
-# O terceiro recebera o restante; 
-#Calcule e imprima a quantia ganha por cada um dos ganhadores. 
-'''
-valor = 78000000
-print(f'Valor total: R${valor}')
-pri = valor * 0.46
-valor = valor - pri
-print(f'Primeiro ganhador: R${pri}')
-seg = valor * 0.32
-valor = valor - seg
-print(f'Segundo ganhador: R${seg}')
-ter = valor
-print(f'terceiro ganhador: R${ter}')
-'''
-
-#40. Uma empresa contrata um encanador a R$ 30,00 por dia. Faga um programa que solicite o número de dias trabalhados pelo encanador e imprima a quantia liquida #que devera ser paga, sabendo-se que são descontados 8% para imposto de renda.
-'''
-dia = 30.00
-dias_trabalhados = int(input('Informe os dias trabalhados: '))
-valor_total = dia * dias_trabalhados
-valor_liquido = valor_total - (valor_total * 0.08)
-print(f'Dias trabalhados: {dias_trabalhados}')
-print(f'Valor total: R${valor_total}')
-print(f'Valor a receber com 8% de IR: R${valor_liquido}')
-'''
-
-#41. Faça um programa que leia o valor da hora de trabalho (em reais) e número de horas trabalhadas no mês. Imprima o valor a ser pago ao funcionário, #adicionando 10% sobre o valor calculado. 
-'''
-hora_reais = float(input('Digite o valor por horas trabalhadas: R$'))
-hora_mes = int(input('Digite as horas trabalhadas no mês: '))
-bruto = (hora_mes * hora_reais)
-valor_real = bruto + (bruto * 0.1)
-print(f'Horas trabalhadas por mês: {hora_mes}')
-print(f'Valor por hora: R${hora_reais}')
-print(f'Valor bruto: {bruto}')
-print(f'Valor real adicionando 10%: {valor_real}')
-'''
-
-#42. Receba o salario-base de um funcionario. Calcule e imprima o salario a receber, sabendo-se que esse funciondrio tem uma gratificação de 5% sobre o #saldrio-base. Além disso, ele paga 7% de imposto sobre o salário-base. 
-'''
-salario_base = float(input('Informe o valor base: R$'))
-gratificacao = salario_base + (salario_base * 0.05)
-imposto = gratificacao - (gratificacao * 0.07)
-print(f'Salário base: {salario_base}')
-print(f'Salário com gratificação: {gratificacao}')
-print(f'Salário final tirando 7% de imposto: {imposto}')
-'''
-
-#43. Escreva um programa de ajuda para vendedores. A partir de um valor total lido, mostre: 
-# o total a pagar com desconto de 10%; 
-# o valor de cada parcela, no parcelamento de 3x sem juros; 
-# a comissao do vendedor, no caso da venda ser a vista (5% sobre o valor com desconto) 
-# a comissão do vendedor, no caso da venda ser parcelada (5% sobre o valor total) 
-'''
-valor_produto = float(input('Informe o valor do produto: R$'))
-pagamento = str(input('Pagamento a vista(v) ou parcelado(p)?: '))
-print(f'Valor do produto: R${valor_produto:.2f}')
-if pagamento == 'v':
-    valor_desconto = valor_produto - (valor_produto * 0.1)
-    comissao_vista = valor_desconto * 0.05
-    print(f'Valor com desconto de 10%: R${valor_desconto:.2f}')
-    print(f'Comissão vendedor a vista: R${comissao_vista:.2f}')
+if estado not in 'MGMSRJSP':
+    print(f'Estado {estado} inválido')
 else:
-    parcela_3x = valor_produto / 3
-    comissao_parcela = valor_produto * 0.05
-    print(f'Valor dividido 3x sem juros: R${parcela_3x:.2f}')
-    print(f'Comissão vendedor parcelado: R${comissao_parcela:.2f}')
-'''
-
-#44. Receba a altura do degrau de uma escada e a altura que o usuário deseja alcançar subindo a escada. Calcule e mostre quantos degraus o usuário deveré subir #para atingir seu objetivo. 
-'''
-alt_degrau = int(input("Informe a altura do degrau em centímetros: "))
-alt_desejada = int(input('Informe a altura que deseja alcançar em centímetros: '))
-degraus = alt_desejada // alt_degrau
-print(f'Para atingir a altura de {alt_desejada} centímetros com cada degrau tendo {alt_degrau} centímetros o usuário deverá subir {degraus:.0f} degraus')
-'''
-
-#45. Faga um programa para converter uma letra maiúscula em letra minúscula. Use a tabela ASCII para resolver o problema. 
-'''
-letra = str(input('digite uma letra:' ))
-print(letra.upper())
-'''
-
-#46. Faça um programa que leia um nimero inteiro positivo de trés digitos (de 100 a 999). Gere outro número formado pelos digitos invertidos do número lido. #Exemplo: 
-#NumeroLido = 123 
-#NumeroGerado = 321. 
-'''
-#verificar se número digitado está entre 100 e 999
-while True:
-    num = int(input('Digite um número de 3 dígitos entre 100 e 999: '))
-    if num < 100 or num > 999:
-        print('Número precisa ser entre 100 e 999')
+    if estado == 'MG':
+        valor_produto = valor_produto + (valor_produto * 0.07)
+    elif estado == 'MS':
+        valor_produto = valor_produto + (valor_produto * 0.08)
+    elif estado == 'RJ':
+        valor_produto = valor_produto + (valor_produto * 0.15)
     else:
-        break
-#mudar número para string e colocar em lista
-lista = list(str(num))
-reverter númertos
-reversa = lista[::-1]
-print(reversa)
+        valor_produto = valor_produto + (valor_produto * 0.12)
+
+print(f'Valor do produto: R${valor_produto}')
+print(f'Estado destino: R${estado}')
+print(f'Valor do produto com imposto: R${valor_produto}')
 '''
 
-#47. Leia um número inteiro de 4 digitos (de 1000 a 9999) e imprima 1 digito por linha. 
 
-#verificar se número digitado está entre 1000 e 9999
+#25. Calcule as raizes da equação de 2° grau. 
+#Lembrando que: 
+#x = -b +- raiz de delta / 2*a
+#Onde 
+#Delta = b² - 4ac 
+#E ax² + bx + c = 0 representa uma equação de 2° grau. 
+#A variavel a tem que ser diferente de zero. Caso seja igual, imprima a mensagem “Nao é equacao de segundo grau”. 
+# Se Delta = 0, existe uma raiz real. Imprima a raiz e a mensagem Raiz única. 
+# Se Delta < 0, nao existe real. Imprima a mensagem Não existe raiz. 
+# Se Delta > 0, imprima as duas raizes reais.
 '''
-while True:
-    num = int(input('Digite um número de 4 dígitos entre 1000 e 9999: '))
-    if num < 1000 or num > 9999:
-        print('Número precisa ser entre 1000 e 9999')
+from math import sqrt
+a = float(input('Digite o valor de A: '))
+b = float(input('Digite o valor de B: '))
+c = float(input('Digite o valor de C: '))
+delta = (b ** 2) - (( 4 * a) * c)
+x1 = (-(b) + sqrt(delta)) / (2 * a)
+x2 = (-(b) - sqrt(delta)) / (2 * a)
+
+if a == 0:
+    print(f'ERRO! Valor de {a} precisa ser difente de Zero. Não é equação de segundo grau!')
+if delta < 0:
+    print(f'ERRO! Valor de {delta} menor que Zero. Não existe raiz')
+elif delta == 0:
+    print(f'Raiz única {delta}')
+else:
+    print(f'Valor de a: {a}')
+    print(f'Valor de b: {b}')
+    print(f'Valor de c: {c}')
+    print(f'Valor de delta: {delta}')
+    print(f'Valor da raiz x1: {x1}')
+    print(f'Valor da raiz x2: {x2}')
+'''
+#26. Leia a distancia em Km e a quantidade de litros de gasolina consumidos por um carro em um percurso, calcule o consumo em Km /I e escreva uma mensagem de acordo com a tabela abaixo: 
+    #CONSUMO | (Km/) MENSAGEM 
+    #menor que 8 Venda o carro! 
+    #entre 8 e l4 Econômico! 
+    #maior que 12 Super econômico! 
+'''
+distancia = float(input('Digite a distância em quilômetros: '))
+consumo = float(input('Digite a quantidade de litros de gasolina consumido no percurso: '))
+consumo_por_litro = distancia / consumo
+if consumo_por_litro < 8:
+    print(f'Consumo por litro: {consumo_por_litro} km/l. Venda o carro!')
+elif consumo_por_litro >= 8 and consumo_por_litro <= 14:
+    print(f'Consumo por litro: {consumo_por_litro} km/l. Econômico!')
+else:
+    print(f'Consumo por litro por litro: {consumo_por_litro} km/l. Super Econômico!')
+'''
+
+#27. Escreva um programa que, dada a idade de um nadador, classifique-o em uma das seguintes categorias: 
+    #Categoria  | Idade 
+    #Infantil A | 5 a 7 
+    #Infantil B | 8 a 10 
+    #Juvenil A  | 11 a 13 
+    #Juvenil B  | 14 a 17 
+    #Sênior maiores de 18 anos 
+'''
+idade = int(input('Digite a idade: '))
+
+if idade >= 5 and idade <= 7:
+    print(f'Idade: {idade}. Categoria: Infantil A')
+elif idade >= 8 and idade <= 10:
+    print(f'Idade: {idade}. Categoria: Infantil B')
+elif idade >= 11 and idade <= 13:
+    print(f'Idade: {idade}. Categoria: Juvenil A')
+elif idade >= 14 and idade <= 17:
+    print(f'Idade: {idade}. Categoria: Juvenil B')
+elif idade >= 18:
+    print(f'Idade: {idade}. Sênior')
+else:
+    print(f'Idade: {idade} precisa ser maior que 4 anos')
+'''
+
+#28. Faça um programa que leia trés números inteiros positivos e efetue o cálculo de uma das seguintes médias de acordo com um valor numérico digitado pelo usuário: 
+#(a) Geométrica: raiz cubica de x * y * z 
+#(b) Ponderada: (x + 2*y+3*z) / 6
+#(c) Harmônica: 1((1/x + 1/y + 1/z))
+#(d) Aritmética: (x+y+z) / 3
+'''
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+n3 = int(input('Digite o terceiro número: '))
+
+print('Digite um número para obter a média relacionada:\n'
+      '1- Geométrica\n'
+      '2- Ponderada\n'
+      '3- Harmônica\n'
+      '4- Aritmética')
+op = input()
+
+if op not in '1234':
+    print(f'Opção {op} inválida!')
+else:
+    if op == '1':
+        media = (n1 * n2 * n3) ** (1/3)
+        print(f'Média Geométrica dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+        
+    elif op == '2':
+        media = (n1 + (2 * n2) + (3 * n3)) / 6
+        print(f'Média Ponderada dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+    
+    elif op == '3':
+        media = 1 / ((1 / n1) + (1 / n2) + (1 / n3))
+        print(f'Média Harmônica dos valores: {n1}, {n2} e {n3} = {media:.2f}')
     else:
-        break
-#mudar número para string e colocar em lista
-lista = list(str(num))
-imprimir numero por lina
-for n in lista:
-    print(n)
+        media = (n1 + n2 + n3) / 3
+        print(f'Média Aritmética dos valores: {n1}, {n2} e {n3} = {media:.2f}')
+
+'''
+#29. Faça uma prova de matematica para crianças que estão aprendendo a somar números inteiros menores do que 100. Escolha números aleatérios entre 1 e 100, e mostre na tela a pergunta: qual é a soma de a + b, onde a e b são os números aleatérios. Peça a resposta. Faca cinco perguntas ao aluno, e mostre para ele as perguntas e as respostas corretas, além de quantas vezes o aluno acertou. 
+'''
+from random import randint
+
+cont_perguntas = 1
+respostas = []
+acertos = 0
+respostas_certas = []
+
+while cont_perguntas <= 5: 
+    n1 = randint(1, 100)
+    n2 = randint(1, 100)
+    print(f'Pergunta {cont_perguntas}:')
+    print(f'Qual o resultado da soma: {n1} + {n2}?')
+    resposta = int(input())
+    respostas.append(resposta)
+    cont_perguntas += 1
+    if resposta == (n1 + n2):
+        acertos += 1
+        respostas_certas.append(resposta)
+        print('Resposta correta!')
+    else:
+        print('Resposta errada!')
+        print(f'Resposta correta: {n1 + n2}')
+print(f'Das 5 perguntas você acertou {acertos}')
 '''
 
-#48. Leia um valor inteiro em segundos, e imprima-o em horas, minutos e segundos. 
+#30. Faga um programa que receba trés números e mostre-os em ordem crescente. 
 '''
-seg = int(input('Digite um valor inteiro em segundos: '))
-#divisão inteira para hora
-hora = seg // 3600
-#pegar o resto da hora para os minutos
-segundos = seg % 3600
-#divisão inteira do resto para os minutos
-minutos = segundos // 60
-#pegar o resto da hora para segundos
-res = segundos % 60
-print(f'{seg} segundos equivale a {hora}h, {minutos}m, {res}s')
+lista_num = []
+while len(lista_num) < 3:
+    num = int(input('Digite um número: '))
+    lista_num.append(num)
+
+print(f'Números digitados: {lista_num}\n'
+      f'Número em ordem crescente: {sorted(lista_num)}')
 '''
 
-#49. Faça um programa para leia o horário (hora, minuto e segundo) de inicio e a duração, em segundos, de uma experiéncia biológica. O programa deve resultar com #o novo horario (hora, minuto e segundo) do termino da mesma. 
+#31. Fagaum programa que receba a altura e o peso de uma pessoa. De acordo com a tabela a seguir, verifique e mostra qual a classificação dessa pessoa. 
+    #Altura                              Peso 
+                    #Até 60 | Entre 60 e 90 (Inclusive) | Acima de 90 
+    #Menor que 1,20     A               D                   G 
+    #De 1,20 a 1,70     B               E                   H 
+    #Maior que 1,70     c               F                   I
 '''
-#input de dados
-inicio_hora = int(input('Digite a hora de início: '))
-inicio_minuto = int(input('Digite o minuto de início: '))
-inicio_segundo = int(input('Digite o segundo de início: '))
-duracao = int(input('Digite o tempo de duração em segundos: '))
-#transformando tempo do inicio do experimento em segundos
-inicio_hora_em_segundos = inicio_hora * 3600
-inicio_minuto_em_segundos = inicio_minuto * 60
-inicio_total_em_segundos = inicio_hora_em_segundos + inicio_minuto_em_segundos + inicio_segundo
-#somando tempo de incio com a duração para apresentar a hora final
-duracao_experiencia = duracao + inicio_total_em_segundos
-#separando o tempo de duração em horas
-termino_hora = duracao_experiencia // 3600
-segundos = duracao_experiencia % 3600
-termino_minuto = segundos // 60
-termino_segundo = segundos% 60
-print(f'Início do experimento: {inicio_hora}h, {inicio_minuto}m, {inicio_segundo}s')
-print(f'Término do experimento: {termino_hora}h, {termino_minuto}m, {termino_segundo}s')
+h = float(input('Digite a altura em metros: '))
+p = float(input('Digite o peso em kg: '))
+
+if h < 1.20:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: A')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: D')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: G')
+elif h >= 1.20 and h <= 1.70:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: B')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: E')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: H')
+else:
+    if p <= 60:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: C')
+    elif p > 60 and p <= 90:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: F')
+    else:
+        print(f'Altura:{h}\n'
+              f'Peso: {p}\n'
+              f'Categoria: I')
 '''
 
-#50. Implemente um programa que calcule o ano de nascimento de uma pessoa a partir de 
-#sua idade e do ano atual.
+#32. Escrever um programa que leia o código do produto escolhido do cardapio de uma lanchonete e a quantidade. O programa deve calcular o valor a ser pago por aquele lanche. Considere que a cada execução somente sera calculado um pedido. O cardapio da lanchonete segue o padrao abaixo: 
+#Especificação      Código       Preço 
+#Cachorro Quente    100          1.20 
+#Bauru Simples      101          1.30 
+#Bauru com Ovo      102          1.50 
+#Hamburguer         103          1.20 
+#Cheeseburguer      104          1.70 
+#Suco               105          2.20 
+#Refrigerante       106          1.00 
 '''
-from datetime import datetime, date
-ano_atual = date.today().year
-idade = int(input('Informe sua idade em anos: '))
-ano_nascimento = ano_atual - idade
-print(f'Idade: {idade}')
-print(f'Ano nascimento: {ano_nascimento}')
+print('Especificação      Código       Preço\n' 
+'Cachorro Quente    100          1.20\n'
+'Bauru Simples      101          1.30\n'
+'Bauru com Ovo      102          1.50\n' 
+'Hamburguer         103          1.20\n'
+'Cheeseburguer      104          1.70\n' 
+'Suco               105          2.20\n' 
+'Refrigerante       106          1.00\n' )
+cod_produto = int(input('Digite o código do produto: '))
+qtd = int(input('Digite a quantidade: '))
+if cod_produto == 100:
+    valor_tot = qtd * 1.20
+    print('Produto: Cachorro quente\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 101:
+    valor_tot = qtd * 1.30
+    print('Produto: Bauru simples\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.30\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 102:
+    valor_tot = qtd * 1.50
+    print('Produto: Bauru com ovo\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.50\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 103:
+    valor_tot = qtd * 1.20
+    print('Produto: Hamburguer\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 104:
+    valor_tot = qtd * 1.70
+    print('Produto: Cheeseburguer\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.70\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 105:
+    valor_tot = qtd * 2.20
+    print('Produto: Suco\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$2.20\n'
+          f'Valor Total: R${valor_tot:.2f}')
+elif cod_produto == 106:
+    valor_tot = qtd * 1.00
+    print('Produto: Refrigerante\n'
+          f'Código: {cod_produto}\n'
+          'Preço: R$1.00\n'
+          f'Valor Total: R${valor_tot:.2f}')
 '''
 
-#51. Escreva um programa que leia as coordenadas x e y de pontos no R² e calcule sua distancia da origem (0, 0). 
+
+#33. Um produto vai sofrer aumento de acordo com a tabela abaixo. Leia o preço antigo, calcule e escreva o preço novo, e escreva uma mensagem em função do preço novo (de acordo com a segunda tabela). 
+#PREÇO ANTIGO       PERCENTUAL DE AUMENTO         PREÇO NOVO                        MENSABEM 
+#até R$ 50                  5%                    até R$ 80                         Barato 
+#entre R$ 50 e R$ 100       10%                   entre R$ 80 e R$ 120 (inclusive)  Normal 
+#acima de R$ 100            15%                   entre R$ 120 e R$ 200 (inclusive) Caro 
+#                                                 acima de R$ 200                   Muito caro 
 '''
-x1 = int(input('Informe a cordenada de x1: '))
-x2 = int(input('Informe a cordenada de x2: '))
-y1 = int(input('Informe a cordenada de y1: '))
-y2 = int(input('Informe a cordenada de y2: '))
-distancia = (((x1 - x2) ** 2) + ((y1 - y2) ** 2) ** 0.5)
-print(f'A distância entre os pontos x({x1}, {x2}) e y({y1}, {y2}) é: {distancia:.2f})')
+valor_antigo = float(input('Digite o valor antigo: R$'))
+if valor_antigo <= 50:
+    valor_novo = valor_antigo + (valor_antigo * 0.05)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+elif valor_antigo > 50  and valor_antigo <= 100:
+    valor_novo = valor_antigo + (valor_antigo * 0.10)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+else:
+    valor_novo = valor_antigo + (valor_antigo * 0.15)
+    print(f'Valor antigo: R${valor_antigo:.2f}\n'
+          f'Valor novo: R${valor_novo:.2f}')
+
+if valor_novo <= 80:
+    print('Barato')
+elif valor_novo > 80 and valor_novo <= 120:
+    print('Normal')
+elif valor_novo > 120 and valor_novo <= 200:
+    print('Caro')
+else:
+    print('Muito caro')
 '''
 
-#52. Trés amigos jogaram na loteria. Caso eles ganhem, o prémio deve ser repartido proporcionalmente ao valor que cada deu para a realização da aposta. Faga um #programa que leia quanto cada apostador investiu, o valor do prémio, e imprima quanto cada um ganharia do prémio com base no valor investido. 
+
+#34. Leia a nota e o número de faltas de um aluno, e escreva seu conceito. De acordo com a tabela abaixo, quando o aluno tem mais de 20 faltas ocorre uma redução de conceito. 
+#NOTA           CONCEITO (ATE 20 FALTAS)        CONCEITO (MAIS DE 20 FALTAS) 
+#9.0 até 10.0               A                                 B
+#7.5 até 8.9                B                                 C
+#5.0 até 7.4                C                                 D
+#4.0 até 4.9                D                                 E
+#0.0 até 3.9                E                                 E
 '''
-#input de dados
-j1 = float(input('Digite quantos reais o jogador 1 investiu: R$'))
-j2 = float(input('Digite quantos reais o jogador 2 investiu: R$'))
-j3 = float(input('Digite quantos reais o jogador 3 investiu: R$'))
-premio = float(input('Digite o valor do prêmio em reais: R$'))
-#soma total da aposta de cada jogador
-soma_aposta = j1 + j2 + j3
-#calculo da porcetagem que cada jogador irá receber
-premio_j1 = (j1 / soma_aposta) * premio
-premio_j2 = (j2 / soma_aposta) * premio
-premio_j3 = (j3 / soma_aposta) * premio
-print(f'Jogador 1 apostou R${j1:.2f} e irá receber: R${premio_j1:.2f}')
-print(f'Jogador 2 apostou R${j2:.2f} e irá receber: R${premio_j2:.2f}')
-print(f'Jogador 3 apostou R${j3:.2f} e irá receber: R${premio_j3:.2f}')
+nota =  float(input('Digite a nota: '))
+faltas = int(input('Digite o número de faltas: '))
+
+if faltas <= 20:
+    if nota > 9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: A')
+    elif nota >= 7.5 and nota <= 8.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: B')
+    elif nota >= 5.0 and nota <= 7.4:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: C')
+    elif nota >= 4.0 and nota <= 4.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: D')
+    elif nota >= 0 and nota <= 3.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
+else:
+    if nota > 9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: B')
+    elif nota >= 7.5 and nota <= 8.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: C')
+    elif nota >= 5.0 and nota <= 7.4:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: D')
+    elif nota >= 4.0 and nota <= 4.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
+    elif nota >= 0 and nota <= 3.9:
+        print(f'Nota: {nota}\n'
+              f'Faltas: {faltas}\n'
+              f'Conceito: E')
 '''
 
-#53. Faça um programa para ler as dimensoes de um terreno (comprimento c e largura 1), bem como o preco do metro de tela p. Imprima o custo para cercar este #mesmo terreno com tela.
+
+#35. Leia uma data e determine se ela é valida. Ou seja, verifique se o més esta entre 1 e 12, e se o dia existe naquele més. Note que Fevereiro tem 29 dias em anos bissextos, e 28 dias em anos nao bissextos. 
 '''
-c = float(input('Digite o comprimento do terreno em metros: '))
-l = float(input('Digite a largura do terreno em metros: '))
-p = float(input('Digite o valor do metro da tela: R$'))
-area_terreno = c * l
-valor_tela = p * area_terreno
-print(f'Será necessário R${valor_tela:.2f} para cobrir a aréa do terreno de {area_terreno}m²')
+dia = int(input('Digite o dia: '))
+mes = int(input('Digite o mes: '))
+ano = int(input('Digite o ano: '))
+mes_30 = [4, 6, 9, 11]
+
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    if mes == 2:
+        if dia > 29:
+            print('Dia inválido! Fevereiro possui 29 dias!')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')            
+
+else:
+    if mes == 2:
+        if dia > 28:
+            print('Dia inválido! Não é ano bissexto')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                    print(f'{dia}/{mes}/{ano}')                 
+        else:
+            if dia > 31:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 31 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')                 
+'''
+
+
+#36. Escreva um programa que, dado o valor da venda, imprima a comissão que deverá ser paga ao vendedor. Para calcular a comissão, considere a tabela abaixo: 
+#Venda mensal                                               Comissão 
+#Maior ou igual a R$100.000,00                              R$700,00 + 16% das vendas 
+#Menor que R$100.000,00 e maior ou igual a R$80.000,00      R$650,00 + 14% das vendas 
+#Menor que R$80.000,00 e maior ou igual a R$60.000,00       R$600,00 + 14% das vendas 
+#Menor que R$60.000,00 e maior ou igual a R$40.000,00       R$550,00 + 14% das vendas 
+#Menor que R$40.000,00 e maior ou igual a R$20.000,00       R$500,00 + 14% das vendas 
+#Menor que R$20.000,00                                      R$400,00 + 14% das vendas 
+'''
+valor_mensal = float(input('Digite o valor da venda: R$'))
+if valor_mensal >= 100000.00:
+    comissao = 700 + (valor_mensal * 0.16)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 100000.00 and valor_mensal >= 80000.00:
+    comissao = 650 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 80000.00 and valor_mensal >= 60000.00:
+    comissao = 600 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')    
+elif valor_mensal < 60000.00 and valor_mensal >= 40000.00:
+    comissao = 550 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+elif valor_mensal < 40000.00 and valor_mensal >= 20000.00:
+    comissao = 500 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')    
+else:
+    comissao = 400 + (valor_mensal * 0.14)
+    print(f'Valor mensal: R${valor_mensal}\n'
+          f'Valor comissão: R${comissao:.2f}')
+'''
+
+
+#37. As tarifas de certo parque de estacionamento são as seguintes: 
+# 1º e 2º hora - R$ 1,00 cada 
+# 3º e 4º hora - R$ 1,40 cada 
+# 5º hora e seguintes - R$ 2,00 cada 
+#O número de horas a pagar é sempre inteiro e arredondado por excesso. Deste modo, quem estacionar durante 61 minutos pagará por duas horas, que é o mesmo que pagaria se tivesse permanecido 120 minutos. Os momentos de chegada ao parque e partida deste são apresentados na forma de pares de inteiros, representando horas e minutos. Por exemplo, o par 12 50 representará “dez para a uma da tarde”. Pretende-se criar um programa que, lidos pelo teclado os momentos de chegada e de partida, escreva na tela o preço cobrado pelo estacionamento. Admite-se que a chegada e a partida se dão com intervalo não superior a 24 horas. Portanto, se uma dada hora de chegada for superior à da partida, isso não é uma situação de erro, antes significará que a partida ocorreu no dia seguinte ao da chegada. 
+'''
+hora_chegada = int(input('Digite a hora de chegada: '))
+minuto_chegada = int(input('Digite o minuto de chegada: '))
+hora_saida = int(input('Digite a hora de saída: '))
+minuto_saida = int(input('Digite o minuto de saída: '))
+#arredonar minuto em hora
+if minuto_chegada > 0:
+    arredonda_hora_chegada = hora_chegada + 1
+else:
+    arredonda_hora_chegada = hora_chegada
+if minuto_saida > 0:
+    arredonda_hora_saida = hora_saida + 1
+else:
+    arredonda_hora_saida = hora_saida
+
+#verificar tempo de permanência
+if arredonda_hora_chegada > arredonda_hora_saida:
+    permanencia = arredonda_hora_chegada - arredonda_hora_saida
+else:
+    permanencia = arredonda_hora_saida - arredonda_hora_chegada
+
+#Calcular valor
+if permanencia == 0:
+    valor = 1
+elif permanencia <= 2:
+    valor = permanencia
+elif permanencia > 2 and permanencia <= 4:
+    valor = permanencia * 1.40
+else:
+    valor = permanencia * 2
+
+print(f'Hora de chegada {hora_chegada}:{minuto_chegada}\n'
+      f'Hora de saída {hora_saida}:{minuto_saida}\n'
+      f'Tempo de permanência {permanencia} hora(s)\n'
+      f'Valor R${valor:.2f}')
+'''
+
+
+#38. Leia uma data de nascimento de uma pessoa fornecida através de três números inteiros: 
+#Dia, Mês e Ano. Teste a validade desta data para saber se esta é uma data válida. Teste se o dia fornecido é um dia válido: dia > O, dia < 28 para o mês de fevereiro (29 se o ano for bissexto), dia < 30 em abril, junho, setembro e novembro, dia < 31 nos outros meses. Teste a validade do més: més > 0 e mês < 13. Teste a validade do ano: ano < ano atual (use uma constante definida com o valor igual a 2008). Imprimir: “data válida” ou “data inválida” no final da execução do programa.
+'''
+dia = int(input('Digite o dia: '))
+mes = int(input('Digite o mes: '))
+ano = int(input('Digite o ano: '))
+mes_30 = [4, 6, 9, 11]
+data_atual = '2722024'
+
+if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+    if mes == 2:
+        if dia > 29:
+            print('Dia inválido! Fevereiro possui 29 dias!')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')            
+
+else:
+    if mes == 2:
+        if dia > 28:
+            print('Dia inválido! Não é ano bissexto')
+        else:
+            print(f'{dia}/{mes}/{ano}') 
+    else:
+        if mes in mes_30:
+            if dia > 30:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 30 dias!')
+            else:
+                    print(f'{dia}/{mes}/{ano}')                 
+        else:
+            if dia > 31:
+                print(f'Dia {dia} inválido. Mês {mes} só tem 31 dias!')
+            else:
+                print(f'{dia}/{mes}/{ano}')     
+
+if ano > 2008:
+    print('Ano inválido')
+elif ano == 2008:
+    if dia >= 28:
+        if mes == 2:
+            print('Data  ')
+'''
+
+
+#39. Uma empresa decide dar um aumento aos seus funcionários de acordo com uma tabela que considera o salário atual e o tempo de serviço de cada funcionário. Os funcionários com menor salário terão um aumento proporcionalmente maior do que os funcionários com um salário maior, e conforme o tempo de serviço na empresa, cada funcionário irá receber um bônus adicional de salário. Faça um programa que leia: 
+# 0 valor do salário atual do funcionário; 
+# 0 tempo de serviço desse funcionário na empresa (número de anos de trabalho na empresa). 
+#Use as tabelas abaixo para calcular o salário reajustado deste funcionário e imprima o valor do salário final reajustado, ou uma mensagem caso o funcionário não tenha direito a nenhum aumento. 
+#salário Atual      Reajuste(%)    Tempo de Servico    Bonus 
+#Até 500,00         25%            Abaixo de 1 ano     Sem bénus 
+#Até 1000,00        20%            De 1 a 3 anos       100,00 
+#Até 1500,00        15%            De 4 a 6 anos       200,00 
+#Até 2000,00        10%            De 7 a 10 anos      300,00 
+#Acima de 2000,00   Sem reajuste   Mais de 10 anos     500,00 
+'''
+salario_atual = float(input('Digite o salário atual: R$'))
+tempo_servico = int(input('Digite o tempo de serviço em anos: '))
+
+#Cálculo reajuste
+if salario_atual <= 500:
+    reajuste = salario_atual + (salario_atual * 0.25)
+    print(f'Salário antigo: R${salario_atual:.2f}\n'
+          f'Salário com reajuste de 25%: R${reajuste:.2f}')
+elif salario_atual > 500 and salario_atual <= 1000:
+    reajuste = salario_atual + (salario_atual * 0.20)
+    print(f'Salário antigo: R${salario_atual:.2f}\n'
+          f'Salário com reajuste de 20%: R${reajuste:.2f}')
+elif salario_atual > 1000 and salario_atual <= 1500:
+    reajuste = salario_atual + (salario_atual * 0.15)
+    print(f'Salário antigo: R${salario_atual:.2f}\n'
+          f'Salário com reajuste de 15%: R${reajuste:.2f}')
+elif salario_atual > 1500 and salario_atual <= 2000:
+    reajuste = salario_atual + (salario_atual * 0.10)
+    print(f'Salário antigo: R${salario_atual:.2f}\n'
+          f'Salário com reajuste de 10%: R${reajuste:.2f}')
+else:
+    reajuste = salario_atual
+    print('Salário acima de R$2000.00. Sem reajuste')
+
+#Cálculo bônus
+if tempo_servico < 1:
+    print('Tempo de serviço menor que 1 ano. Sem bônus')
+elif tempo_servico >= 1 and tempo_servico <= 3:
+    print(f'Tempo de serviço: {tempo_servico}\n'
+          'Bônus de R$100.00\n'
+          f'Salário com Bônus: R${reajuste + 100}')
+elif tempo_servico >= 4 and tempo_servico <= 6:
+    print(f'Tempo de serviço: {tempo_servico}\n'
+          'Bônus de R$200.00\n'
+          f'Salário com Bônus: R${reajuste + 200}')
+elif tempo_servico >= 7 and tempo_servico <= 10:
+    print(f'Tempo de serviço: {tempo_servico}\n'
+          'Bônus de R$300.00\n'
+          f'Salário com Bônus: R${reajuste + 300}')
+else:
+    print(f'Tempo de serviço: {tempo_servico}\n'
+          'Bônus de R$500.00\n'
+          f'Salário com Bônus: R${reajuste + 500}')
+'''
+
+
+
+#40. O custo ao consumidor de um carro novo é a soma do custo de fabrica, da comissao do distribuidor, e dos impostos. A comissao e os impostos sao calculados sobre o custo de fabrica, de acordo com a tabela abaixo. Leia o custo de fabrica e escreva o custo ao consumidor. 
+#CUSTO DE FABRICA               % DO DISTRIBUIDOR       % DOS IMPOSTOS 
+#até R$12.000,00                5                       isento 
+#entre R$12.000,00 e 25.000,00  10                      15 
+#acima de R$25.000,00           15                      20 
+'''
+custo_fabricacao = float(input('Digite o custo de fábrica: R$'))
+if  custo_fabricacao <= 12000:
+    distribuidor = custo_fabricacao * 0.05
+    imposto = 0
+    print(f'Custo de fabricação: R${custo_fabricacao}\n'
+          f'Comissão do distribuidor: R${distribuidor:.2f}\n'
+          f'Imposto: R${imposto:.2f}\n'
+          f'Custo ao consumidor: R${custo_fabricacao + distribuidor + imposto:.2f}')
+elif custo_fabricacao > 12000 and custo_fabricacao <= 25000:
+    distribuidor = custo_fabricacao * 0.10
+    imposto = custo_fabricacao * 0.15
+    print(f'Custo de fabricação: R${custo_fabricacao}\n'
+          f'Comissão do distribuidor: R${distribuidor:.2f}\n'
+          f'Imposto: R${imposto:.2f}\n'
+          f'Custo ao consumidor: R${custo_fabricacao + distribuidor + imposto:.2f}')
+else:
+    distribuidor = custo_fabricacao * 0.15
+    imposto = custo_fabricacao * 0.20
+    print(f'Custo de fabricação: R${custo_fabricacao}\n'
+          f'Comissão do distribuidor: R${distribuidor:.2f}\n'
+          f'Imposto: R${imposto:.2f}\n'
+          f'Custo ao consumidor: R${custo_fabricacao + distribuidor + imposto:.2f}')
+'''
+
+
+#41. Faga um algoritmo que calcule o IMC de uma pessoa e mostre sua classificação de acordo com a tabela abaixo:
+#imc = (peso / (altura ** 2)) 
+#IMC            Classificagao 
+#< 18,5         Abaixo do Peso 
+#18,6 - 24,9    Saudavel 
+#25,0 - 29,9    Peso em excesso 
+#30,0 - 34,9    Obesidade Grau I 
+#35,0 - 39,9    Obesidade Grau II(severa) 
+#>= 40,0        Obesidade Grau III(mórbida)
+'''
+peso = float(input('Digite o peso em quilos: '))
+altura = float(input('Digite a altura em metros: '))
+imc = peso / (altura ** 2)
+
+if imc < 18.5:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Abaixo do Peso')
+elif imc >= 18.6 and imc <= 24.9:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Saudável')
+elif imc >= 25 and imc <= 29.9:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Peso em axcesso')
+elif imc >= 30 and imc <= 34.9:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Obseisade Grau 1')
+elif imc >= 35 and imc <= 39.9:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Obseisade Grau 2(severa)')
+else:
+    print(f'IMC: {imc:.2f}\n'
+          'Classificação: Obseisade Grau 3(mórbida)')
 '''
