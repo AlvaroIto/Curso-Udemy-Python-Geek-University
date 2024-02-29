@@ -236,17 +236,111 @@ print(f'Lista de números digitados: {lista_num}\n'
 '''
 
 
-#21. Faça um programa que receba dois nimeros. Calcule e mostre: e a soma dos nimeros pares desse intervalo de nimeros, incluindo os nimeros digitados; e a multiplicagao dos nimeros impares desse intervalo, incluindo os digitados; 
+#21. Faça um programa que receba dois números. Calcule e mostre: 
+#   a soma dos números pares desse intervalo de números, incluindo os números digitados; 
+#   a multiplicação dos números impares desse intervalo, incluindo os digitados; 
+'''
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+lista_numeros = []
+lista_par = []
+lista_impar = []
+if n1 == n2:
+    print(f'Números são iguais: {n1} e {n2}')
+elif n1 > n2:
+    for n in range(n2, n1+1):
+        lista_numeros.append(n)
+else:
+    for n in range(n1, n2+1):
+        lista_numeros.append(n)
 
-#22. Escreva um programa completo que permita a qualquer aluno introduzir, pelo teclado, uma sequéncia arbitraria de notas (validas no intervalo de 10 a 20) e que mostre na tela, como resultado, a correspondente média aritmética. O número de notas com que o aluno pretenda efetuar o célculo nao será fornecido ao programa, o qual terminara quando for introduzido um valor que não seja valido como nota de aprovação. 
+for n in lista_numeros:
+    if n % 2 == 0:
+        lista_par.append(n)
+
+    else:
+        lista_impar.append(n)
+        mult = 1
+        for num in lista_impar:
+            mult *= num
+
+print(f'Lista dos números no intervalo digitado: {lista_numeros}\n'
+        f'Lista dos números pares: {lista_par}\n'
+        f'Soma dos números pares: {sum(lista_par)}\n'
+        f'Lista dos números ímpares: {lista_impar}\n'
+        f'Multiplicação dos números pares: {(mult)}')
+'''
+
+
+#22. Escreva um programa completo que permita a qualquer aluno introduzir, pelo teclado, uma sequéncia arbitraria de notas (validas no intervalo de 10 a 20) e que mostre na tela, como resultado, a correspondente média aritmética. O número de notas com que o aluno pretenda efetuar o cálculo nao será fornecido ao programa, o qual terminara quando for introduzido um valor que não seja valido como nota de aprovação. 
+'''
+nota = 10
+lista_notas = []
+while True:
+    nota = int(input('Digite a nota: '))
+    if nota < 10 or nota > 20:
+        break
+    else:
+        lista_notas.append(nota)    
+
+media  = sum(lista_notas) / (len(lista_notas))
+print(f'Notas digitadas: {lista_notas}\n'
+      f'Média aritmética: {media:.2f}')
+'''
+
 
 #23. Faca um algoritmo que leia um número positivo e imprima seus divisores. 
+'''
+num = int(input('Digite um número: '))
+lista_numeros = []
+lista_divisor = []
+for n in range(1, num+1):
+        if num % n == 0:
+            lista_divisor.append(n)
 
-#24. Escreva um programa que leia um número inteiro e calcule a soma de todos os divisores desse número, com excecao dele proprio. Ex: a soma dos divisores do número 66 é 1+42+3+6+11+22+33=78 
+print(f'Divisores de {n}: {lista_divisor}')
+'''
 
-#25. Faga um programa que some todos os nimeros naturais abaixo de 1000 que sao múltiplos de 3ou 5. 
 
-#26. Faca um algoritmo que encontre o primeiro maltiplo de 11, 13 ou 17 apés um número dado. 
+#24. Escreva um programa que leia um número inteiro e calcule a soma de todos os divisores desse número, com excecao dele proprio. Ex: a soma dos divisores do número 66 é 1+2+3+6+11+22+33=78 
+'''
+num = int(input('Digite um número: '))
+lista_numeros = []
+lista_divisor = []
+for n in range(1, num+1):
+        if num % n == 0:
+            if num == n:
+                  break
+            else:
+                  lista_divisor.append(n)
+
+print(f'Divisores de {n}: {lista_divisor}. Soma dos divisores: {sum(lista_divisor)}')
+'''
+
+
+#25. Faga um programa que some todos os números naturais abaixo de 1000 que sao múltiplos de 3 ou 5. 
+'''
+lista = []
+
+for n in range(1000):
+    if n % 3 == 0:
+        lista.append(n)
+    elif n % 5 == 0:
+        lista.append(n)
+
+print(f'Lista dos números múltiplos de 3 e 5: {lista}\n'
+      f'Soma da lista acima: {sum(lista)}')
+'''
+
+
+#26. Faca um algoritmo que encontre o primeiro múltiplo de 11, 13 ou 17 após um número dado. 
+'''
+num = int(input('Digite um número: '))
+for n in range(1, num):
+    if n % 11 == 0 or n % 13 == 0 or n % 17 == 0:
+        print(n)
+        break
+'''
 
 #27. Em Matematica, o nimero harménico designado por H (n) define-se como sendo a soma da série harménica: H(n)=1+1/2+1/34+1/4+...4+1/n 
 #Faça um programa que leia um valor n inteiro e positivo e apresente o valor de H (n).
