@@ -448,44 +448,209 @@ print(f'{num} primeiros multiplos de {i} ou {j}: {sorted(mult)}')
 
 #34. Faça um programa que calcule o menor número divisível por cada um dos números de 1 a 20? Ex: 2520 é o menor número que pode ser dividido por cada um dos números de 1 a 10, sem sobrar resto. 
 
-divisores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-numeros = range(1, 3000)
-lista_num = []
-for n in divisores:
-    if list(range(1, 3000)) % divisores[n] == 0:
-        lista_num.append(n)
-        
-
-print(lista_num)
-        
-
 #35. Faça um programa que some os números impares contidos em um intervalo definido pelo usuário. O usuário define o valor inicial do intervalo e o valor final deste intervalo e o programa deve somar todos os números impares contidos neste intervalo. Caso o usuário digite um intervalo inválido (começando por um valor maior que o valor final) deve ser escrito uma mensagem de erro na tela, “Intervalo de valores invalido” e o programa termina. Exemplo de tela de saída: Digite o valor inicial e valor final: 5 10 
 #Soma dos impares neste intervalo: 21 
+'''
+vi = int(input('Digite o valor inicial: '))
+vf = int(input('Digite o valor final: '))
+soma = 0
 
-#36. Faça um programa que calcule a diferença entre a soma dos quadrados dos primeiros 100 números naturais e o quadrado da soma. Ex: A soma dos quadrados dos dez primeiros números naturais é, (1**2) + (2**2) + ... + (10 ** 2) = 385 O quadrado da soma dos dez primeiros números naturais é, (1+2+..+10)**2 = 552 = 3025 
-#A diferenca entre a soma dos quadrados dos dez primeiros números naturais e o quadrado da soma é 3025-385 = 2640.
+for n in range(vi, vf):
+    if vi > vf:
+        print(f'Valor inicial ({vi}) não pode ser maior que valor final ({vf})')
+    else:
+        if n % 2 != 0:
+            soma += n
+
+print(f'Valor inicial: {vi}')
+print(f'Valor final: {vf}')
+print(f'Soma dos valores ímpares no intervalo: {soma}')
+'''
 
 
-#37. Escreve um programa que verifique quais números entre 1000 e 9999 (inclusive) possuem a propriedade seguinte: a soma dos dois digitos de mais baixa ordem com os dois digitos de mais alta ordem elevada ao quadrado é igual ao próprio numero. Por exemplo, para o inteiro 3025, temos que: 30 + 25 = 55 55 ** 2 = 3025 
+#36. Faça um programa que calcule a diferença entre a soma dos quadrados dos primeiros 100 números naturais e o quadrado da soma. Ex: A soma dos quadrados dos dez primeiros números naturais é, (1**2) + (2**2) + ... + (10 ** 2) = 385 O quadrado da soma dos dez primeiros números naturais é, (1+2+..+10)**2 = 552 = 3025 
+#A diferenca entre a soma dos quadrados dos dez primeiros números naturais e o quadrado da soma é 3025-385 = 2640.
+'''
+soma_quadrado_100 = 0
+quadrado_soma_100 = 0
+diferenca = 0
+
+for n in range(1, 101):
+    soma_quadrado_100 += n ** 2
+
+for n in range(1, 101):
+    quadrado_soma_100 += n
+quadrado_soma_100 = quadrado_soma_100 * quadrado_soma_100
+
+diferenca =  quadrado_soma_100 - soma_quadrado_100
+print(diferenca)
+'''
+
+
+#37. Escreve um programa que verifique quais números entre 1000 e 9999 (inclusive) possuem a propriedade seguinte: a soma dos dois digitos de mais baixa ordem com os dois digitos de mais alta ordem elevada ao quadrado é igual ao próprio numero. Por exemplo, para o inteiro 3025, temos que: 30 + 25 = 55 55 ** 2 = 3025 
+'''
+lista = []
+for n in range(1000, 10000):    
+    alta = n // 100
+    baixa = n % 100
+    soma_ao_quadrado = (baixa + alta) * (baixa + alta)
+
+    if soma_ao_quadrado == n:
+        lista.append(soma_ao_quadrado)
+
+print(lista)   
+'''
 
 #38. Faça um programa que calcule o terno pitagorico a, b, c, para o qual a+ b+ c = 1000. Um terno pitagdrico é um conjunto de trés nimeros naturais, a, b, c, para a qual, (a ** 2) + (b ** 2) + (c ** 2) Por exemplo, (3**2) + (4**2) = 9 + 16 = 25 = 5**2
+'''
+from math import sqrt
+valor_a = int(input('Digite o valor de a: '))
+valor_b = int(input('Digite o valor de b: '))
+soma_a_b = (valor_a ** 2) + (valor_b ** 2)
+valor_c = sqrt(soma_a_b)
 
-#39. Faga um programa que calcule a area de um tridngulo, cuja base e altura são fornecidas pelo usuério. Esse programa nao pode permitir a entrada de dados invalidos, ou seja, medidas menores ou iguais a 0. 
+print(f'({valor_a} ** 2) + ({valor_b} ** 2) = {soma_a_b} = {valor_c:.0f} ** 2 ')
+'''
 
-#40. Elabore um programa que faca leitura de varios nimeros inteiros, até que se digite um número negativo. O programa tem que retornar o maior e o menor namero lido. 
 
-#41. Faça um programa que calcula a associacao em paralelo de dois resistores R1 e R2 fornecidos pelo usuário via teclado. O programa fica pedindo estes valores e calculando até que o usuario entre com um valor para resisténcia igual a zero. R = (R1 * R2) / (R1 + R2)
+#39. Faga um programa que calcule a area de um triângulo, cuja base e altura são fornecidas pelo usuário. Esse programa nao pode permitir a entrada de dados invalidos, ou seja, medidas menores ou iguais a 0.
+'''
+base = 0
+altura = 0
+while True:
+    base = float(input('Digite o valor da base do triângulo: '))
+    altura = float(input('Digite o valor da altura do triângulo: '))
+    if base <= 0:
+        print(f'Base: {base} não pode ser menor ou igual a 0\n')
+    elif altura <= 0:
+        print(f'altura: {altura} não pode ser menor ou igual a 0\n')
+    else:
+        break
+
+area = (base * altura) / 2
+print(f'A área do triângulo de base: {base} e altura: {altura} é: {area:.2f}')
+'''
+    
+#40. Elabore um programa que faça leitura de varios números inteiros, até que se digite um número negativo. O programa tem que retornar o maior e o menor número lido. 
+'''
+numeros = []
+while True:
+    num = int(input('Digite um número positivo ou um número negativo para sair: '))
+    if num < 0:
+        break
+    else:
+        numeros.append(num)
+
+print(f'Números digitados: {numeros}\n'
+      f'Maior número digitado: {max(numeros)}')
+'''
+
+#41. Faça um programa que calcula a associação em paralelo de dois resistores R1 e R2 fornecidos pelo usuário via teclado. O programa fica pedindo estes valores e calculando até que o usuario entre com um valor para resisténcia igual a zero. R = (R1 * R2) / (R1 + R2)
+'''
+while True:
+    r1 = float(input('Digite o valor do resistor R1: '))
+    r2 = float(input('Digite o valor do resistor R2: '))
+    if r1 == 0:
+        print(f'Resistor 1 = {r1} ')
+        print('Fim')
+        break
+
+    elif r2 == 0:
+        print(f'Resistor 2 = {r2} ')
+        print('Fim')
+        break
+        
+    else:
+        res = (r1 * r2) / (r1 + r2)
+        print(f'{res:.2f}')
+'''
 
 #42. Faça um programa que leia um conjunto não determinado de valores, um de cada vez, e escreva para cada um dos valores lidos, o quadrado, o cubo e a raiz quadrada. Finalize a entrada de dados com um valor negativo ou zero. 
+'''
+from math import sqrt
+while True:
+    num = int(input('Digite um valor diferente de 0: '))
+    if num <= 0:
+        print('Fim')
+        break
+    else:
+        print(f'Quadrado de {num} = {num ** 2}\n'
+              f'Cubo de {num} = {num ** 3}\n'
+              f'Raiz quadrada de {num} = {sqrt(num):.2f}')
+'''
 
 #43. Faça um programa que leia um número indeterminado de idades de indivíduos (pare quando for informada a idade 0), e calcule a idade média desse grupo. 
+'''
+idade = []
+while True:
+    num = int(input('Digite uma idade válida ou 0 para sair: '))
+    if num <= 0:
+        break
+    else:
+        idade.append(num)
 
-#44. Leia um número positivo do usuário, entao, calcule e imprima a sequência Fibonacci até o primeiro namero superior ao numero lido. Exemplo: se o usuário informou o número 30, a sequéncia a ser impressasera0 1123581321 34. 
+print(f'Idades digitadas: {idade}\n'
+      f'Média das idades digitadas: {sum(idade) / len(idade):.2f}')
+'''
 
-#45. Faça um algoritmo que converta uma velocidade expressa em km/h para m/s e vice versa. Vocé deve criar um menu com as duas opções de conversdo e com uma opção para finalizar o programa. O usuário podera fazer quantas conversoes desejar, sendo que o programa só sera finalizado quando a opção de finalizar for escolhida. 
+#44. Leia um número positivo do usuário, entao, calcule e imprima a sequência Fibonacci até o primeiro namero superior ao numero lido. Exemplo: se o usuário informou o número 30, a sequéncia a ser impressão sera 0 1 1 2 3 5 8 13 21 34. 
+'''
+num = int(input('Digite um número positivo: '))
+n1 = 0
+n2 = 1
+print(f'{n1} -> {n2}', end='')
+cont = 3
+while cont <= num:
+    n3 = n1 + n2
+    print(f' -> {n3}', end='')
+    n1 = n2
+    n2 = n3
+    cont += 1
+'''
 
-#46. Faça um programa que gera um número aleatério de 1 a 1000. O usuário deve tentar acertar qual o nimero foi gerado, a cada tentativa o programa devera informar se o chute é menor ou maior que o nimero gerado. O programa acaba quando o usuario acerta o numero gerado. O programa deve informar em quantas tentativas o numero foi descoberto.
- 
+#45. Faça um algoritmo que converta uma velocidade expressa em km/h para m/s e vice versa. Vocé deve criar um menu com as duas opções de conversão e com uma opção para finalizar o programa. O usuário podera fazer quantas conversoes desejar, sendo que o programa só sera finalizado quando a opção de finalizar for escolhida. 
+'''
+while True:    
+    vel = float(input('Digite uma velocidade: '))
+    print('Digite uma das opções abaixo: \n'
+        '1- Converter a velocidade para km/h\n'
+        '2- Converter a velocidade para m/s\n'
+        '3- Sair do programa')
+    op = int(input())
+    if op == 1:
+        km = vel * 3.6
+        print(f'Velocidade em m/s: {vel}\n'
+            f'Velocidade convertida para Km/h: {km:.2f}\n')
+    elif op == 2:
+        ms = vel / 3.6
+        print(f'Velocidade em km/h: {vel}\n'
+            f'Velocidade convertida para Km/h: {ms:.2f}\n')
+    else:
+        print('Fim do programa')
+        break
+'''
+
+#46. Faça um programa que gera um número aleatório de 1 a 1000. O usuário deve tentar acertar qual o número foi gerado, a cada tentativa o programa devera informar se o chute é menor ou maior que o número gerado. O programa acaba quando o usuario acerta o numero gerado. O programa deve informar em quantas tentativas o numero foi descoberto.
+'''
+from random import randint
+num_gerado = randint(1, 1000)
+#print(num_gerado)
+chute = 0
+while True:
+    print('Tente adivinhar o número gerado de 1 a 1000!')
+    palpite = int(input('Digite o número: '))
+    if palpite == num_gerado:
+        chute += 1
+        print(f'Ganhou! Número de tentativas: {chute}')
+        break
+    elif palpite > num_gerado:
+        print(f'Palpite ({palpite}) é MAIOR que numero gerado. Tente novamente')
+        chute += 1
+    else:
+        print(f'Papite ({palpite}) é MENOR que número gerado')
+        chute += 1
+'''
+
 #47. Faça um programa que apresente um menu de opções para o cálculo das seguintes operações entre dois números: 
 #   adição (opção 1) 
 #   subtração (opção 2) 
@@ -493,6 +658,35 @@ print(lista_num)
 #   divisão (opção 4)
 #   saída (opção 5) 
 #O programa deve possibilitar ao usuário a escolha da operação desejada, a exibição do resultado e a volta ao menu de opções. O programa só termina quando for escolhida a opção de saída (opção 5). 
+'''
+while True:   
+    print('Digite um número das opções abaixo: \n'
+        '1- Adição\n'
+        '2- Subtração\n'
+        '3- Multiplicação\n'
+        '4- Divistão\n'
+        '5- Sair')
+    op = int(input())
+
+    if str(op) not in '1234':
+        print('FIM')
+        break
+
+    n1 =int(input('Digite o primeiro número: '))
+    n2 =int(input('Digite o segundo número: '))
+    
+    if op == 1:
+        print(f'{n1} + {n2} = {n1 + n2}\n')
+    elif op == 2:
+        print(f'{n1} - {n2} = {n1 - n2}\n')
+    elif op == 3:
+        print(f'{n1} * {n2} = {n1 * n2}\n')
+    elif op == 4:
+        if n2 == 0:
+            print(f'ERRO! Divisão por 0!\n')
+        else:
+            print(f'{n1} / {n2} = {n1 / n2:.2f}\n')
+'''
 
 #48. Faça um programa que some os termos de valor par da sequência de Fibonacci, cujos valores não ultrapassem quatro milhões. 
 
