@@ -342,22 +342,122 @@ for n in range(1, num):
         break
 '''
 
-#27. Em Matematica, o nimero harménico designado por H (n) define-se como sendo a soma da série harménica: H(n)=1+1/2+1/34+1/4+...4+1/n 
+#27. Em Matematica, o número harmônico designado por H(n) define-se como sendo a soma da série harmônica: H(n)=1+1/2+1/34+1/4+...4+1/n 
 #Faça um programa que leia um valor n inteiro e positivo e apresente o valor de H (n).
+'''
+num = int(input('Digite o valor: '))
+for n in range(1, num+1):
+    const = 1
+    calc_const = 0
+    calc_const += (const / n)
 
-#28. Faça um programa que leia um valor N inteiro e positivo, calcule o mostre o valor £, conforme a fórmula a seguir E=1+1/14+1/2141/314+..+1/N! 
+print(f'Resultado do número harmônico de {num} = {1 + calc_const}')
+'''
 
-#29. Escreva um programa para calcular o valor da série, para 5 termos. S=0+1/214+2/41+3/6!+... 
+#28. Faça um programa que leia um valor N inteiro e positivo, calcule o mostre o valor E, conforme a fórmula a seguir E=1+1/1!+1/2!+1/3!+..+1/N! 
+'''
+num = int(input('Digite um número: '))
+cont = 1
+fat = 1
+calc_const = 0
+while cont <= num:
+    fat *= cont
+    cont += 1
+    calc_const += (1 / fat)
+res = print(f'Valor de E do número {num} é: {1 + calc_const:.2f}')
+'''
 
-#30. Faça programas para calcular as seguintes sequências: 1+2+3+4+5+..+m 
+#29. Escreva um programa para calcular o valor da série, para 5 termos. S=0+1/2!+2/4!+3/6!+...
+'''
+for n in range(1, 6):
+    fat = 1
+    cont = 1
+    calc = 0
+    while cont <= 6:
+        fat *= n
+        cont += 1
+        calc += 1/fat
 
-#31. Faça um programa que calcule e escreva o valor de S. S = (1/3) + (3/2) + (5/3) + (7/4) + ... + (99/50)
+print(f'{calc:.2f}')
+'''
+
+#31. Faça um programa que calcule e escreva o valor de S. S = (1/1) + (3/2) + (5/3) + (7/4) + ... + (99/50)
+'''
+num = []
+for n in range(1, 100):
+    if n % 2 != 0:
+        num.append(n)
+
+div = []
+for n in range(1, 51):
+    div.append(n)
+
+for n in range(50):
+    soma = sum({num[n] / div[n]})
+    print(f'{num[n]} / {div[n]}')
+
+print(f'= {soma}')
+'''
 
 #32. Faça um programa que simula o lançamento de dois dados, d1 e d2, n vezes, e tem como saída o número de cada dado e a relação entre eles (>,<,=) de cada lançamento. 
+'''
+from random import choice
+from time import sleep
+dado1 = range(1, 7)
+dado2 = range(1, 7)
+vezes = int(input('Serão quantas rodadas?: '))
 
-#33. Dados n e dois números inteiros positivos, i e j, diferentes de 0, imprimir em ordem crescente os n primeiros naturais que são múltiplos de i ou de j e ou de ambos. Exemplo: Paran=6,i=2ej=3asaída deverá ser: 0,2,3,4,6,8.
+for n in range(1, vezes+1):
+    res1 = choice(dado1)
+    res2 = choice(dado2)
+    sleep(1)
+    print('Jogando dados:')
+    sleep(0.5)
+    print(f'Dado 1: {res1}')
+    sleep(1)
+    print(f'Dado 2: {res2}')
+    sleep(1)
+    if res1 > res2:
+        print(f'{res1} > {res2}')
+    elif res1 < res2:
+        print(f'{res1} < {res2}')
+    else:
+        print(f'{res1} = {res2}')
+'''
+
+
+#33. Dados n e dois números inteiros positivos, i e j, diferentes de 0, imprimir em ordem crescente os n primeiros naturais que são múltiplos de i ou de j e ou de ambos. Exemplo: Para n=6, i=2 e j=3 a saída deverá ser: 0,2,3,4,6,8.
+'''
+num = int(input('Digite o valor de n: ')) 
+i = int(input('Digite o valor de i: '))
+j = int(input('Digite o valor de j: '))
+mult = []
+
+for n in range(num):
+    if len(mult) < num:
+        mult_i = n * i
+        if mult_i not in mult:    
+            mult.append(mult_i)
+            if len(mult) < num:
+                mult_j = n * j
+                if mult_j not in mult:
+                    mult.append(mult_j)
+
+print(f'{num} primeiros multiplos de {i} ou {j}: {sorted(mult)}')
+'''
 
 #34. Faça um programa que calcule o menor número divisível por cada um dos números de 1 a 20? Ex: 2520 é o menor número que pode ser dividido por cada um dos números de 1 a 10, sem sobrar resto. 
+
+divisores = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+numeros = range(1, 3000)
+lista_num = []
+for n in divisores:
+    if list(range(1, 3000)) % divisores[n] == 0:
+        lista_num.append(n)
+        
+
+print(lista_num)
+        
 
 #35. Faça um programa que some os números impares contidos em um intervalo definido pelo usuário. O usuário define o valor inicial do intervalo e o valor final deste intervalo e o programa deve somar todos os números impares contidos neste intervalo. Caso o usuário digite um intervalo inválido (começando por um valor maior que o valor final) deve ser escrito uma mensagem de erro na tela, “Intervalo de valores invalido” e o programa termina. Exemplo de tela de saída: Digite o valor inicial e valor final: 5 10 
 #Soma dos impares neste intervalo: 21 
