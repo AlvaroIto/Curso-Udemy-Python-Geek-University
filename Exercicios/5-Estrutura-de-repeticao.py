@@ -689,16 +689,106 @@ while True:
 '''
 
 #48. Faça um programa que some os termos de valor par da sequência de Fibonacci, cujos valores não ultrapassem quatro milhões. 
+'''
+n1 = 0
+n2 = 1
+soma_pares = 0
+lista_pares = []
+cont = 3
+while soma_pares < 4000000:
+    n3 = n1 + n2
+    if n3 % 2 == 0:
+        lista_pares.append(n3)
+        soma_pares += n3
+    n1 = n2
+    n2 = n3
+#    cont += 1
+    if soma_pares > 4000000:
+        break
+print(soma_pares)
+'''
 
 #49. O funcionário chamado Carlos tem um colega chamado João que recebe um salário que equivale a um terço do seu salário. Carlos gosta de fazer aplicações na caderneta de poupança e vai aplicar seu salário integralmente nela, pois está rendendo 2% ao mês. João aplicará seu salário integralmente no fundo de renda fixa, que está rendendo 5% ao mês. Construa um programa que deverá calcular e mostrar a quantidade de meses necessários para que o valor pertencente a João iguale ou ultrapasse o valor pertencente a Carlos. Teste com outros valores para as taxas.
+'''
+sal_carlos = float(input('Digite o salário de Carlos: R$'))
+sal_joao = sal_carlos * 0.333
+renda = sal_joao + (sal_joao * 0.05)
+meses = 0
+renda_tot = 0
+while renda_tot <= sal_carlos:
+    renda_tot += renda
+    meses += 1
 
-
+print(f'Salário Carlos: R${sal_carlos:.2f}\n'
+      f'Salário João: R${sal_joao:.2f}\n'
+      f'Renda de 5% baseado no valor de R${sal_joao:.2f}: R${renda:.2f}\n'
+      f'Renda Total: {renda_tot:.2f}\n'
+      f'Quantidaes de meses para igualar ou ultrapassar o salário de Carlos: {meses}')
+'''
+      
 #50. Chico tem 1.50 metro e cresce 2 centimetros por ano, enquanto Zé tem 1.10 metros e cresce 3 centimetros por ano. Escreva um programa que calcule e imprima quantos anos serdo necessarios para que Zé seja maior que Chico. 
+'''
+alt_chico = 1.50
+alt_ze = 1.10
+ano = 0
+
+while alt_ze < alt_chico:
+    alt_chico += 0.02
+    alt_ze += 0.03
+    ano += 1
+
+print(f'Irá demorar {ano} anos para a altura de Zé ({alt_ze:.2f}) passar de Chico ({alt_chico:.2f})')
+'''
 
 #51. Um funcionario recebe aumento anual. Em 1995 foi contratado por 2000 reais. Em 1996 recebeu aumento de 1.5%. A partir de 1997, os aumentos sempre correspondem ao dobro do ano anterior. Faga programa que determine o salario atual do funcionario. 
+'''
+ano = 1996
+salario = 2000
+aumento_antigo = salario * 0.015
+print(f'primeiro aumento: {aumento_antigo}')
+salario += aumento_antigo
+while ano < 2024:
+    print(aumento_antigo)
+    aumento_atual = aumento_antigo * 2
+    aumento_antigo = aumento_atual
+    print(f'Aumento: {aumento_atual}')
+    salario += aumento_atual
+    print(f'Salário: R${salario}')
+    ano += 1
+    print(f'Ano: {ano}')
+
+print(f'No ano de {ano} esse funcionário irá receber: R${salario:.2f}')
+'''
 
 #52. Escreva um programa que receba como entrada o valor do saque realizado pelo cliente de um banco e retorne quantas notas de cada valor serao necessarias para atender ao saque com a menor quantidade de notas possivel. Serao utilizadas notas de 100, 50, 20, 10,5,2e 1real 
-
+'''
+valor = int(input('Digite o valor de saque: R$'))
+total = valor
+ced = 100
+totced = 0
+while True:
+    if total >= ced:
+        total -= ced
+        totced += 1
+    else:
+        if totced > 0:
+            print(f'Total de {totced} cédulas de R${ced}')
+        if ced == 100:
+            ced = 50
+        elif ced == 50:
+            ced = 20
+        elif ced == 20:
+            ced = 10
+        elif ced == 10:
+            ced = 5
+        elif ced == 5:
+            ced = 2
+        elif ced == 2:
+            ced = 1
+        totced = 0
+        if total == 0:
+            break
+'''
 #53. Escreva um programa que leia um número inteiro positivo n e em seguida imprima n linhas do chamado Triangulo de Floyd. Para n = 6, temos: 
 #1 
 #2 3 
@@ -707,7 +797,20 @@ while True:
 #11 12 13 14 15 
 #16 17 18 19 20 21 
 
+'''
+COPIA
+linha = int(input('Digite o número de linhas: '))
+m = 1
+for c in range(1, linha + 1):
+    for i in range(1, c + 1):
+        print(f'{m:<4}', end='')
+        m += 1
+    print()
+'''
+
 #54. Faça um programa que receba um número inteiro maior do que 1, e verifique se o nimero fornecido é primo ou nao.
+
+
 
 #55. Escreva um programa que leia um inteiro nao negativo n e imprima a soma dos n primeiros nimeros primos. 
 
@@ -727,6 +830,44 @@ while True:
 #(e) O menor número digitado 
 #(f) A média dos números pares 
 #Finalize a entrada de dados caso o usuario informe o valor 0.
+'''
+numeros = []
+pares = []
+maior = menor = cont = soma = soma_par = 0
+#loop para ler vários números
+while True:
+    num = int(input('Digite um número ou 0 para sair: '))
+    cont += 1
+    if num == 0:
+        break
+    else:
+        soma += num
+        numeros.append(num)
+        media = soma / len(numeros)
+
+        #verificar o maior e menor número digitado
+        if cont == 1:
+            maior = menor = 1
+        else:
+            if num > maior:
+                maior = num
+            if num < menor:
+                menor = num
+
+        #números pares
+        if num % 2 == 0:
+            soma_par += num
+            pares.append(num)
+            media_pares = soma_par / len(pares)
+
+print(f'A soma dos {len(numeros)} digitados é: {soma}')
+print(f'Foram digitados {len(numeros)} números')
+print(f'A média dos números digitados é: {media}')
+print(f'O maior número digitado foi: {maior}')
+print(f'O menor número digitado foi: {menor}')
+print(f'A média dos números pares é: {media_pares}')
+'''
+
 
 #61. Faça um programa que calcule o maior número palíndromo feito a partir do produto de dois números de 3 dígitos. Ex: O maior palíndromo feito a partir do produto de dois números de dois digitos é 9009 = 91*99. 
 
