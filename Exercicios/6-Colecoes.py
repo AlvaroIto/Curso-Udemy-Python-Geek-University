@@ -123,8 +123,31 @@ print(f'Notas digitadas: {notas}\n'
 '''
 
 #11. Faça um programa que preencha um vetor com 10 números reais, calcule e mostre a quantidade de números negativos e a soma dos números positivos desse vetor. 
+'''
+lista_num = []
+lista_num_neg = []
+soma = 0
+cont = 0
+while cont < 10:
+    num = int(input('Digite um número real: '))
+    if num < 0:
+        lista_num_neg.append(num)
+    else:
+        lista_num.append(num)
+        soma += num
+    cont += 1
+print(f'A lista possui {len(lista_num_neg)} números negativos ({lista_num_neg})\n'
+      f'Soma dos números positivos digitados ({lista_num}): {soma}')
+'''
 
 #12. Fazer um programa para ler 5 valores e, em seguida, mostrar todos os valores lidos juntamente com o maior, o menor e a média dos valores. 
+
+lista_num = []
+for n in range(1, 6):
+    lista_num.append(int(input('Digite um número: ')))
+
+print(f'Lista dos números digitados: {lista_num}\n'
+      f'')
 
 #13. Fazer um programa para ler 5 valores e, em seguida, mostrar a posição onde se encontram o maior e o menor valor.
 
