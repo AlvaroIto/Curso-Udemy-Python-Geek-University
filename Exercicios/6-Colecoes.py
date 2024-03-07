@@ -141,36 +141,215 @@ print(f'A lista possui {len(lista_num_neg)} números negativos ({lista_num_neg})
 '''
 
 #12. Fazer um programa para ler 5 valores e, em seguida, mostrar todos os valores lidos juntamente com o maior, o menor e a média dos valores. 
-
+'''
 lista_num = []
 for n in range(1, 6):
     lista_num.append(int(input('Digite um número: ')))
 
 print(f'Lista dos números digitados: {lista_num}\n'
-      f'')
+      f'Maior número digitado: {max(lista_num)}\n'
+      f'Menor número digitado: {min(lista_num)}\n'
+      f'Média dos números digitados: {sum(lista_num) / 6}')
+'''
 
 #13. Fazer um programa para ler 5 valores e, em seguida, mostrar a posição onde se encontram o maior e o menor valor.
+'''
+lista_num = []
+for n in range(1, 6):
+    lista_num.append(int(input('Digite um número: ')))
+
+print(f'Lista dos números digitados: {lista_num}\n'
+      f'Posição do maior número digitado: {lista_num.index(max(lista_num))}\n'
+      f'Posição do menor número digitado: {lista_num.index(min(lista_num))}\n')
+'''
 
 #14. Façaum programa que leia um vetor de 10 posições e verifique se existem valores iguais e Os escreva na tela. 
+'''
+lista_num = []
+lista_repetido = []
+for n in range(1, 11):
+    num = int(input(f'Digite o {n}º número: '))
+    lista_num.append(num)
+for numero in lista_num:
+    if lista_num.count(numero) > 1: 
+        lista_repetido.append(numero)
+
+print(f'Lista dos números digitados: {lista_num}\n'
+      f'Lista dos números repetidos digitados: {lista_repetido}')
+'''
 
 #15. Leia um vetor com 20 números inteiros. Escreva os elementos do vetor eliminando elementos repetidos. 
+'''
+lista_num = []
+for n in range(1, 11):
+    num = int(input(f'Digite o {n}º número: '))
+    lista_num.append(num)
 
+print(f'Lista dos números digitados sem repetição: {set(lista_num)}\n')
+'''
 #16. Faça um programa que leia um vetor de 5 posições para números reais e, depois, um código inteiro. Se o código for zero, finalize o programa; se for 1, mostre o vetor na ordem direta; se for 2, mostre o vetor na ordem inversa. Caso, o código for diferente de 1  2 escreva uma mensagem informando que o código é inválido. 
+'''
+lista_num = []
+while True:    
+    for n in range(1, 6):
+        num = int(input(f'Digite o {n}º número: '))
+        lista_num.append(num)
+
+    print('Digite um código:\n'
+        '1- Mostrar números digitados.\n'
+        '2- Mostrar números digitados na ordem inversa.\n'
+        '0- Sair.')
+    cod = int(input())
+    if cod == 1:
+        print(f'Código: {cod}\n'
+              f'Lista dos números digitados: {lista_num}')
+    elif cod == 2:
+        print(f'Código: {cod}\n'
+              f'Lista dos números digitados: {lista_num[::-1]}')
+    elif cod == 0:
+        print(f'Código: {cod}\n'
+              'FIM.')
+        break
+    else:
+        print(f'Código {cod} inválido!')
+        break
+'''
 
 #17. Leia um vetor de 10 posições e atribua valor O para todos os elementos que possuírem valores negativos. 
+'''
+lista_num = []
+for n in range(1, 11):
+    num = int(input(f'Digite o {n}º número: '))
+    if num < 0:
+        num = 0
+        lista_num.append(num)
+    else:
+        lista_num.append(num)
+print(f'Lista dos números digitados: {lista_num}')
+'''
 
-#18. Faça um programa que leia um vetor de 10 números. Leia um número r. Conte os múltiplos de um número inteiro x num vetor e mostre-os na tela. 
+#18. Faça um programa que leia um vetor de 10 números. Leia um número x. Conte os múltiplos de um número inteiro x num vetor e mostre-os na tela. 
+'''
+lista_num = []
+mult_x = []
+for n in range(1, 11):
+    num = int(input(f'Digite o {n}º número: '))
+    lista_num.append(num)
+
+x = int(input('Digite um número: '))
+for num in lista_num:
+    if num % x == 0:
+        mult_x.append(num)
+print(f'Lista dos números digitados: {lista_num}\n'
+      f'Lista dos números múltiplos de {x}: {mult_x}')
+'''
 
 #19. Faça um vetor de tamanho 50 preenchido com o seguinte valor: (i +5*1)%(i+1), sendo i a posi¢ao do elemento no vetor. Em seguida imprima o vetor na tela. 
+'''
+lista_num = range(1, 6)
+lista_i = []
+for num in lista_num:
+    i = lista_num.index(num)
+    eq_i = (i + (5 * i)) % (i + 1)
+    lista_i.append(eq_i)
+print(lista_i)
+'''
 
-#20. Escreva um programa que leia nimeros inteiros no intervalo [0,50] e os armazene em um vetor com 10 posições. Preencha um segundo vetor apenas com os nimeros impares do primeiro vetor. Imprima os dois vetores, 2 elementos por linha. 
+#20. Escreva um programa que leia números inteiros no intervalo [0,50] e os armazene em um vetor com 10 posições. Preencha um segundo vetor apenas com os nimeros impares do primeiro vetor. Imprima os dois vetores, 2 elementos por linha. 
+'''
+lista_num = []
+lista_impar = []
+for n in range(1, 11):
+    num = (int(input('Digite um número de 0 a 50: ')))
+    lista_num.append(num)
+    if num % 2 != 0:
+        lista_impar.append(num)
 
-#21. Faça um programa que receba do usudrio dois vetores, A e B, com 10 nimeros inteiros cada. Crie um novo vetor denominado C calculando C = A - B. Mostre na tela os dados do vetor C
+print('Lista dos números digitados:')
+cont = 0
+while cont < 10:
+    print(lista_num[cont], end=' ')
+    if ((cont + 1) % 2 == 0):
+        print('')
+    cont += 1
 
-#22. Faça um programa que leia dois vetores de 10 posições e calcule outro vetor contendo, nas posições pares os valores do primeiro e nas posições impares os valores do segundo. 
+print('Lista dos números ímpares do vetor:')
+cont = 0
+while cont < len(lista_impar):
+    print(lista_impar[cont], end=' ')
+    if ((cont + 1) % 2 == 0):
+        print('')
+    cont += 1
+'''
 
-#23. Ler dois conjuntos de números reais, armazenando-os em vetores e calcular o produto escalar entre eles. Os conjuntos têm 5 elementos cada. Imprimir os dois conjuntos e o produto escalar, sendo que o produto escalar é dado por: r1 = y1 + x2 * 1& + ... + Tp * Yn. 
+#21. Faça um programa que receba do usuário dois vetores, A e B, com 10 números inteiros cada. Crie um novo vetor denominado C calculando C = A - B. Mostre na tela os dados do vetor C
+'''
+lista_a = []
+lista_b = []
+lista_c = []
+#adicionando elementos lista A
+for n in range(1, 6):
+    num = int(input('Digite um número da lista A: '))
+    lista_a.append(num)
+#adicionando elementos lista B
+for n in range(1, 6):
+    num = int(input('Digite um número da lista B: '))
+    lista_b.append(num)
+#Somando elementos da lista A + B e adicionando na lista C
+for n in range(0, 5):
+    soma = lista_a[n] + lista_b[n]
+    lista_c.append(soma)
 
+for n in range(0, 5):
+    print(f'{lista_a[n]} + {lista_b[n]} = {lista_c[n]}')
+'''
+
+#22. Faça um programa que leia dois vetores de 10 posições e calcule outro vetor contendo, nas posições pares os valores do primeiro e nas posições impares os valores do segundo. 
+'''
+lista_a = []
+lista_b = []
+lista_c = []
+#adicionando elementos lista A
+for n in range(1, 6):
+    num = int(input('Digite um número da lista A: '))
+    lista_a.append(num)
+#adicionando elementos lista B
+for n in range(1, 6):
+    num = int(input('Digite um número da lista B: '))
+    lista_b.append(num)
+for n in range(0, 5):
+    if n % 2 == 0:
+        lista_c.append(lista_b[n])
+    else:
+        lista_c.append(lista_a[n])
+
+print(f'Lista A: {lista_a}\n'
+      f'Lista B: {lista_b}\n'
+      f'Lista Junta: {lista_c}')
+'''
+
+#23. Ler dois conjuntos de números reais, armazenando-os em vetores e calcular o produto escalar entre eles. Os conjuntos têm 5 elementos cada. Imprimir os dois conjuntos e o produto escalar, sendo que o produto escalar é dado por: x1 * y1 + x2 * y2 + ... + xn * yn. 
+'''
+lista_a = []
+lista_b = []
+produto = 0
+#adicionando elementos lista A
+for n in range(1, 6):
+    num = int(input('Digite um número da lista A: '))
+    lista_a.append(num)
+#adicionando elementos lista B
+for n in range(1, 6):
+    num = int(input('Digite um número da lista B: '))
+    lista_b.append(num)
+
+for n in range(0, 5):
+    if n < 4:
+        print(f'({lista_a[n]} * {lista_b[n]}) +',end=' ')
+    else:
+        print(f'({lista_a[n]} * {lista_b[n]}) = ',end=' ')
+    produto += (lista_a[n] * lista_b[n])
+print(produto)
+'''
 #24. Faça um programa que leia dez conjuntos de dois valores, o primeiro representando o número do aluno e o segundo representando a sua altura em metros. Encontre o aluno mais baixo e o mais alto. Mostre o nimero do aluno mais baixo e do mais alto, juntamente com suas alturas. 
 
 #25. Faga um programa que preencha um vetor de tamanho 100 com os 100 primeiros naturais que nao sao múltiplos de 7 ou que terminam com 7. 
