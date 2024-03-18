@@ -496,14 +496,25 @@ print(lista_num)
 # Crie um vetor que seja a soma de a e b, mas faça-o usando apenas os vetores construídos anteriormente. 
 #Dica: some as posições correspondentes. Se a soma ultrapassar 10, subtraia 10 do resultado e some 1 à próxima posição. 
 
-a = '1234'
-for l in a:
-    print(l)
 #36. Leia um vetor com 10 números reais, ordene os elementos deste vetor, e no final escreva os elementos do vetor ordenado.
+'''
+lista_num = []
+while len(lista_num) < 10:
+    lista_num.append(int(input('Digite um número: ')))
+
+print(f'Lista dos números digitados: {lista_num}\n'
+      f'Lista dos números digitados em orde: {sorted(lista_num)}')
+'''
 
 #37. Considere um vetor A com 11 elementos onde Al < A2 < ... < A6 > AT > A8 > ... > A11, ou seja, está ordenado em ordem crescente até o sexto elemento, e a partir desse elemento está ordenado em ordem decrescente. Dado o vetor da questao anterior, proponha um algoritmo para ordenar os elementos. 
+'''
+vetor = [6, 7, 8, 9, 10, 11, 5, 4, 3, 2, 1]
+print(vetor)
+print(sorted(vetor))
+'''
 
-#38. Pega ao usuario para digitar dez valores numéricos e ordene por ordem crescente esses valores, guardando-os num vetor. Ordene o valor assim que ele for digitado. Mostre ao final na tela os valores em ordem. 
+#38. Peça ao usuario para digitar dez valores numéricos e ordene por ordem crescente esses valores, guardando-os num vetor. Ordene o valor assim que ele for digitado. Mostre ao final na tela os valores em ordem. 
+
 
 #39. Escreva um programa que leia um número inteiro positivo n e em seguida imprima n linhas do chamado Triangulo de Pascal: 
 #1
