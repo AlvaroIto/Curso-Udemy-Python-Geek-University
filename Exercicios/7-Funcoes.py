@@ -250,7 +250,7 @@ desenha_linha(10)
 '''
 
 #17. Faça uma funcao que receba dois nimeros inteiros positivos por parametro e retorne a soma dos N números inteiros existentes entre eles
-
+'''
 def soma_intervalo(n1, n2):
     soma = 0 
     for n in range(n1, n2):
@@ -258,15 +258,57 @@ def soma_intervalo(n1, n2):
     print(f'A soma do intervalo dos números entre {n1} e {n2} = {soma}')
 
 soma_intervalo(1, 10)
+'''
 
+#18. Faca uma função que receba por parametro dois valores X e Z. Calcule e retorne o resultado de X elevado a Z para o programa principal. Atenção não utilize nenhuma função pronta de exponenciacao. 
+'''
+def exponencial(x, z):
+    return x ** z
 
-#18. Faca uma função que receba por parametro dois valores X e Z. Calcule e retorne o resultado de X7 para o programa principal. Atenção não utilize nenhuma função pronta de exponenciacao. 
+print(exponencial(2, 3))
+'''
 
 #19. Faga uma função que retorne o maior fator primo de um número. 
-
 #20. Faça um algoritmo que receba um numero inteiro positivo n e calcule o seu fatorial, n!. 
+'''
+def fatorial(num):
+    fat = 1
+    cont = 1
+    while num > 0:
+        print(f'{num}', end='')
+        print(' x ' if num > 1 else ' = ', end='')
+        fat *= num
+        num -= 1
+    print(fat)
 
-#21. Escreva uma fungao para determinar a quantidade de nimeros primos abaixo N. 
+fatorial(4)
+'''
+
+
+#21. Escreva uma função para determinar a quantidade de nimeros primos abaixo N. 
+'''
+def num_primo():      
+    div = 0
+    cont = 2
+    num = int(input('Digite um número: '))
+    if num == 1:
+        print(f'O número {num} não é primo')
+    elif num == 2:
+        print(f'O número {num} é primo')
+    else:    
+        while cont < num:
+            if num > 1:
+                if num % cont == 0:
+                    div += 1
+            cont += 1
+
+        if div == 0:
+            print(f'O número {num} é primo')
+        else:
+            print(f'O número {num} não é primo')
+
+num_primo()
+'''
 
 #22. Crie uma funcao que receba como parametro um valor inteiro e gere como saida n linhas com pontos de exclamagao, conforme o exemplo abaixo (para n = 5): 
 #!
@@ -274,8 +316,14 @@ soma_intervalo(1, 10)
 #!!!
 #!!!!
 #!!!!!
-
-
+'''
+def exclamacao(num):
+    cont = 1
+    while cont <= num:
+        print('!' * cont)
+        cont += 1
+exclamacao(5)
+'''
 #23. Escreva uma fungao que gera um tridngulo lateral de altura 2*n-1 e n largura. Por exemplo, a saida para n = 4 seria:
 #*
 #**
@@ -284,8 +332,27 @@ soma_intervalo(1, 10)
 #***
 #**
 #*
+'''
+def triangulo_lateral(num):
+    cont = 1
+    while cont <= num:
+        print('*' * cont)
+        cont += 1
+    while cont >= 0:
+        print('*' * cont)
+        cont -= 1
+
+triangulo_lateral(5)
+'''
 
 #24. Escreva uma função que gera um triangulo de altura e lados n e base 2*n-1. Por exemplo, a saida para n = 6 seria: 
+#     *
+#    ***
+#   *****
+# *********
+#***********
+
+
 
 #25. Faga uma função que receba um inteiro N como parametro, calcule e retorne o resultado da seguinte série: 
 #S = 2 / 4 + 5 / 5 + 10 / 6 + ... + ( (N  ** 2) + 1) / (N + 3) 
