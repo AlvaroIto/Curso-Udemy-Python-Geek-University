@@ -149,26 +149,116 @@ media()
 '''
 
 #12. Escreva uma função que receba um número inteiro maior do que zero e retorne a soma de todos os seus algarismos. Por exemplo, ao nimero 251 corresponderé o valor 8 (2 + 5+ 1). Se o número lido não for maior do que zero, o programa terminara com a mensagem “Numero invalido". 
+'''
+def soma_algarismo():
+    num = int(input('Digite um número positivo: '))
+    soma = 0
+    lista_num = []
+    if num < 0:
+        print('Número inválido!')
+    else:
+        sep_num = str(num)
+        for n in sep_num:
+            lista_num.append(n)
+            soma += int(n)
+    print(f'A soma dos algarismos {lista_num} = {soma}')
 
-#13. Faca uma função que receba dois valores numéricos e um simbolo. Este simbolo representara a operagao que se deseja efetuar com os nimeros. Se o simbolo for + devera ser realizada uma adicao, se for — uma subtração, se for / uma divisao e se for = sera efetuada uma multiplicacao. 
+soma_algarismo()
+'''    
+
+#13. Faca uma função que receba dois valores numéricos e um simbolo. Este simbolo representara a operação que se deseja efetuar com os números. Se o simbolo for + devera ser realizada uma adicao, se for — uma subtração, se for / uma divisao e se for * sera efetuada uma multiplicacao. 
+'''
+def calculo():
+    n1 = float(input('Digite o primeiro número: '))
+    n2 = float(input('Digite o segundo número: '))
+    print('Escolha a operação:\n'
+          '"+" Adição\n'
+          '"-" Subtração\n'
+          '"*" Multiplicação\n'
+          '"/" Divisão')
+    op = input()
+    if op == '+':
+        print(f'{n1} + {n2} = {n1 + n2}')
+    elif op == '-':
+        print(f'{n1} - {n2} = {n1 - n2}')
+    elif  op  == '*':
+        print(f'{n1} * {n2} = {n1 * n2}')
+    elif op == '/':
+        if n2 == 0:
+            print('Erro! Impossiível Divisão por 0')
+        else:
+            print(f'{n1} / {n2} = {(n1 / n2):.2f}')
+    else:
+        print('Operação inválida!')
+
+calculo()
+'''
+
+#14. Faga uma função que receba a distancia em Km e a quantidade de litros de gasolina consumidos por um carro em um percurso, calcule o consumo em Km /I e escreva uma mensagem de acordo com a tabela abaixo: 
 #   CONSUMO         | (Km/) MENSAGEM 
 #menor que 8           Venda o carro! 
-#entre 8el4            Econémico! 
-#maior que 12          Super econdmico!
+#entre 8 e 14          Econémico! 
+#maior que 14          Super econdmico!
+'''
+def consumo_por_litro():
+    km = int(input('Digite a distância em KM: '))
+    litros = float(input(f'Digite o consumo total de gasolina no percusso de {km} km: '))
+    consumo = km / litros
+    if consumo < 8:
+        print(f'Consumo: {consumo:.2f} Venda o carro!')
+    elif consumo >= 8 and consumo <= 14:
+        print(f'Consumo: {consumo:.2f} Econômico!')
+    else:
+        print(f'Consumo: {consumo:.2f} Super Econômico!')
 
-#14. Faga uma fungao que receba a distancia em Km e a quantidade de litros de gasolina consumidos por um carro em um percurso, calcule o consumo em Km /I e escreva uma mensagem de acordo com a tabela abaixo: 
+consumo_por_litro()
+'''
 
-#15. Crie um programa que receba trés valores (obrigatoriamente maiores que zero), representando as medidas dos trés lados de um triangulo. Elabore funções para: 
+#15. Crie um programa que receba trés valores (obrigatoriamente maiores que zero), representando as medidas dos trés lados de um triangulo. Elabore funções para: 
 #(a) Determinar se eles lados formam um triangulo, sabendo que: 
 #     O comprimento de cada lado de um triangulo é menor do que a soma dos outros dois lados. 
 #(b) Determinar e mostrar o tipo de triangulo, caso as medidas formem um triangulo. Sendo que: 
 #    Chama-se equilatero o triangulo que tem trés lados iguais. 
 #    Denominam-se isésceles o tridngulo que tem o comprimento de dois lados iguais. 
 #    Recebe o nome de escaleno o tridngulo que tem os trés lados diferentes. 
+'''
+def tipo_triangulo():
+    l1 = float(input('Digite o primeiro lado do triângulo: '))
+    l2 = float(input('Digite o segundo lado do triângulo: '))
+    l3 = float(input('Digite o terceiro lado do triângulo: '))
+
+    if l1 < (l2 + l3) and l2 < (l1 + l3) and l3 < (l1 + l2):
+        print('Pode-se formar um Triângulo')
+        if l1 == l2 and l2 == l3:
+            print('O triângulo é equilátero!')
+        elif l1 != l2 != l3 != l1:
+            print('O triângulo é escaleno!')
+        else:
+            print('O triângulo é isósceles')
+    else:
+        print('Não pode se formar um triângulo')
+
+tipo_triangulo()
+'''
 
 #16. Faca uma função chamada Desenhalinha. Ele deve desenhar uma linha na tela usando varios simbolos de igual (Ex: = ). A fungao recebe por parametro quantos sinais de igual serao mostrados. 
+'''
+def desenha_linha(tamanho):
+    print('=' * tamanho)
+
+desenha_linha(10)
+'''
 
 #17. Faça uma funcao que receba dois nimeros inteiros positivos por parametro e retorne a soma dos N números inteiros existentes entre eles
+
+def soma_intervalo(n1, n2):
+    soma = 0 
+    for n in range(n1, n2):
+        soma += n
+    print(f'A soma do intervalo dos números entre {n1} e {n2} = {soma}')
+
+soma_intervalo(1, 10)
+
 
 #18. Faca uma função que receba por parametro dois valores X e Z. Calcule e retorne o resultado de X7 para o programa principal. Atenção não utilize nenhuma função pronta de exponenciacao. 
 
