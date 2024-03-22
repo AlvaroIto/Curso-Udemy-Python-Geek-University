@@ -455,7 +455,9 @@ troque(1, 2)
 
 #40. Faça uma função que receba um vetor de inteiros e retorne quantos valores pares ele possui
 
-
+def conta_par(vetor):
+    for n in vetor:
+        
 
 #41. Faça uma fungao que receba um vetor de inteiros e retorne o maior valor. 
 
