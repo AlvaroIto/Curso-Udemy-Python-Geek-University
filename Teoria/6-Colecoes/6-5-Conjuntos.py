@@ -62,7 +62,7 @@ estudantes_java = {'Fernando', 'Gustavo', 'Julia', 'Ana', 'Patricia'}
 
 #Veja que alguns alunos que estudam Python também estudam Java
 
-#Precisamos gerar um conjunto com onmes de estudantes unicos
+#Precisamos gerar um conjunto com nomes de estudantes unicos
 #Forma1 - Utilizando union
 unicos1 = estudantes_python.union(estudantes_java)
 print(unicos1)

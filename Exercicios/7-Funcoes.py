@@ -346,38 +346,116 @@ triangulo_lateral(5)
 '''
 
 #24. Escreva uma função que gera um triangulo de altura e lados n e base 2*n-1. Por exemplo, a saida para n = 6 seria: 
-#     *
-#    ***
-#   *****
-# *********
+#*
+#***
+#*****
+#*******
+#*********
 #***********
-
-
+'''
+def triangulo_ast():    
+    num = 6
+    for n in range(1, num + 1):
+        print(f"{'*' * (2 * n - 1):^15}")
+triangulo_ast()
+'''
 
 #25. Faga uma função que receba um inteiro N como parametro, calcule e retorne o resultado da seguinte série: 
 #S = 2 / 4 + 5 / 5 + 10 / 6 + ... + ( (N  ** 2) + 1) / (N + 3) 
-
 #26. Faça um algoritmo que receba um número inteiro positivo n e calcule o somatério de 1 até n. 
+'''
+def somatorio(num):
+    cont = 1
+    while cont <  num:
+        print(cont)
+        cont  += cont
+somatorio(10)
+'''
 
-#32. Faca uma função chamada ‘simplifica’ que recebe como parametro o numerador e o denominador de uma fragdo. Esta função deve simplificar a fragao recebida dividindo o numerador e o denominador pelo maior fator possivel. Por exemplo, a fragao 36/60 simplifica para 3/5 dividindo o numerador e o denominador por 12. A função deve modificar as variaveis passadas como parametro. 
+#32. Faca uma função chamada ‘simplifica’ que recebe como parametro o numerador e o denominador de uma fração. Esta função deve simplificar a fração recebida dividindo o numerador e o denominador pelo maior fator possivel. Por exemplo, a fração 36/60 simplifica para 3/5 dividindo o numerador e o denominador por 12. A função deve modificar as variaveis passadas como parametro. 
+'''
+def simplifica(num, den):
+    divisores_numerador = []
+    divisores_denominador = []
 
-#33. Faça uma fungao que receba um nimero N e retorne a soma dos algarismos de N!. Ex: se N = 4, N! = 24. Logo, a soma de seus algarismos é 2 + 4 =6. 
+    for n in range(1, num):
+        if num % n == 0:
+            divisores_numerador.append(n)
+
+    for n in range(1, den):
+        if den % n == 0:
+            divisores_denominador.append(n)
+
+    maior_div_comum = max(set(divisores_numerador) & set(divisores_denominador))
+
+    print(f'{num / maior_div_comum} / {den / maior_div_comum} = {(num/ maior_div_comum) / (den / maior_div_comum)}' )
+
+simplifica(35, 60)
+'''
+
+#33. Faça uma função que receba um número N e retorne a soma dos algarismos de N!. Ex: se N = 4, N! = 24. Logo, a soma de seus algarismos é 2 + 4 =6. 
+'''
+def fatorial(num):
+    fat = 1
+    cont = 1
+    algarismo_fat = []
+    soma_algarismo = 0
+    while num > 0:
+        print(f'{num}', end='')
+        print(' x ' if num > 1 else ' = ', end='')
+        fat *= num
+        num -= 1
+    print(fat)
+
+    string_fat = str(fat)
+    print(f'Soma dos algorismos: ', end='')
+    for n in string_fat:
+        print(f'{n}', end=' ')
+        soma_algarismo += int(n)
+    print(f'= {soma_algarismo}')
+
+fatorial(9)
+'''
 
 #34. Faca uma funcao nao-recursiva que receba um nimero inteiro positivo impar N e retorne o fatorial duplo desse numero. O fatorial duplo é definido como o produto de todos os números naturais impares de 1 até algum número natural impar N. Assim, o fatorial duplo de 5 é: 5!! = 1 * 3 * 5 = 15 
+'''
+def fatorial_impar(num):
+    fat = 1
+    cont = 1
+    lista_impar = []
+    while num > 0:
+        if num % 2 != 0:
+            print(f'{num}', end='')
+            print(' x ' if num > 1 else ' = ', end='')
+            fat *= num
+        num -= 1
+    print(fat)
 
-#35. Faga uma fungao nao-recursiva que receba um número inteiro positivo n e retorne o fatorial quadruplo desse namero. O fatorial quadruplo de um número n é dado por: (2n)! / n!
+fatorial_impar(7)
+'''
 
+#35. Faça uma função nao-recursiva que receba um número inteiro positivo n e retorne o fatorial quadruplo desse namero. O fatorial quadruplo de um número n é dado por: (2n)! / n!
 #36. Faça uma fungao nao-recursiva que receba um número inteiro positivo N e retorne o superfatorial desse nimero. O superfatorial de um número N é definida pelo produto dos N primeiros fatoriais de N. Assim, o superfatorial de 4 é sf(4) = 11 * 21 * 3! * 4! = 288. 
-
-#37. Faça uma fungao nao-recursiva que receba um número inteiro positivo n e retorne o hiperfatorial desse nimero. O hiperfatorial de um número n, escrito H (n), é definido por: 
+#37. Faça uma fungao nao-recursiva que receba um número inteiro positivo n e retorne o hiperfatorial desse nimero. O hiperfatorial de um número n, escrito H (n), é definido por: 
 # H(n) =[[io KF=11.22.3%. .. (n=1)"'.n" 
-
-#38. Faça uma fungao nao-recursiva que receba um número inteiro positivo n e retorne o fatorial exponencial desse número. Um fatorial exponencial é um inteiro positivo n elevado a poténcia de n — 1, que por sua vez é elevado a poténcia de n — 2 e assim em diante. Ou seja: 
+#38. Faça uma fungao nao-recursiva que receba um número inteiro positivo n e retorne o fatorial exponencial desse número. Um fatorial exponencial é um inteiro positivo n elevado a poténcia de n — 1, que por sua vez é elevado a poténcia de n — 2 e assim em diante. Ou seja: 
 #n (n=2)"" 1) 
 
 #39. Faça uma função ‘Troque’, que recebe duas variaveis reais A e B e troca o valor delas (i.e., A recebe o valor de B e B recebe o valor de A). 
+'''
+def troque(a, b):
+    c = ''
+    c = b
+    b = a
+    a = c
+    print(f'Valor de A: {a}')
+    print(f'Valor de B: {b}')
+troque(1, 2)
+'''
 
 #40. Faça uma função que receba um vetor de inteiros e retorne quantos valores pares ele possui
+
+
 
 #41. Faça uma fungao que receba um vetor de inteiros e retorne o maior valor. 
 
