@@ -21,32 +21,50 @@ print(pessoa1.dados())
 # void imprimePessoa(int index); // imprime os dados da pessoa que está na posição “i” da agenda.
 
 class Agenda:
-    def __init__(self, pessoa) -> None:
-        self.__pessoa = pessoa
+    lista_agenda = []
+    def __init__(self, nome, idade, altura) -> None:
+        self.nome = nome
+        self.idade = idade
+        self.altura = altura
+
+
+
     
     def armazena_pessoa(self):
-        contador = 0
-        if contador < 3:
-            lista = []
-            lista.append(self.__pessoa)
-            contador += 1
+        if len(Agenda.lista_agenda) <= 1:
+            print(f'Contato de número {len(Agenda.lista_agenda ) + 1} adicionado.')
+            print(f'Dados do contato:')
+            print(f'Nome: {self.nome}')
+            print(f'Idade: {self.idade}')
+            print(f'Altura: {self.altura}')
+            print()
+            Agenda.lista_agenda.append([self.nome, self.idade, self.altura])
         else:
-            print('Agenda lotada!')
+            print('Agenda lotada')
+            print()
     
-    def imprime_agenda(self):
-        for n in lista:
-            
+    def remove_pessoa(self):
+        pass
+
+    def busca_pessoa(self):
+        pass
+
+    def imprime_agenda():
+        for v in Agenda.lista_agenda:
+            print(v)
+                
 
 
-class Pessoa:
-    def __init__(self, nome, idade, altura) -> None:
-        self.__nome = nome
-        self.__idade = idade
-        self.__altura =altura
+contato1 = Agenda('Angelina', 40, 1.85)
+Agenda.armazena_pessoa(contato1)       
 
-pessoa = Pessoa('Angelina', 45, 1.80)
+contato2 = Agenda('Felicity', 43, 1.85)
+Agenda.armazena_pessoa(contato2)
 
+contato3 = Agenda('Lana', 32, 1.68)
+Agenda.armazena_pessoa(contato3)
 
+Agenda.imprime_agenda()
 
 #3. Crie uma classe denominada Elevador para armazenar as informações de um elevador dentro de um prédio. A classe deve armazenar o andar atual (térreo = O), total de andares no prédio, excluindo o térreo, capacidade do elevador, e quantas pessoas estão presentes nele. 
 #A classe deve também disponibilizar os seguintes métodos: 
