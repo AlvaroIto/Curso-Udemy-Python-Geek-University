@@ -294,7 +294,7 @@ print(Eletrodomestico.imprimir(eletro1))
 #23) Baseando-se no exercício 22 adicione os atributos numeroCanais e, volumeMaximo, onde numeroCanais indica o número máximo de canais que o televisor pode sintonizar e volumeMaximo indica qual o maior nível de volume possível. O método imprimir deve ser modificado de forma a mostrar na tela os valores de todos os atributos. 
 #24) Baseando-se no exercício 23 adicione os métodos canalAcima e canalAbaixo, sendo que o método canalAcima deve sintonizar sempre o próximo canal em relação ao canal atual, onde ao chegar ao maior canal possível deverá voltar ao canal 1. O método canalAbaixo deve sintonizar sempre o canal anterior em relação ao canal atual, onde ao chegar ao canal 1 deverá voltar ao maior canal possível, simulando desta forma o funcionamento de um televisor.
 #25) Baseando-se no exercício 24 adicione os métodos volumeAcima e volumeAbaixo, sendo que o método volumeAcima deve modificar o volume para o próximo nível de volume possível, onde ao chegar ao volumeMaximo não poderá possibilitar que o volume seja alterado. O método volumeAbaixo deve modificar o volume para o nivel imediatamente inferior de volume em relação ao volume atual, não podendo ser menor do que 0, simulando desta forma o funcionamento de um televisor. 
-
+'''
 class Televisor:
     def __init__(self, canal=1, volume=1) -> None:
         self.__canal = canal
@@ -317,20 +317,72 @@ class Televisor:
         if self.__ligado == True:
             return f'O televisor está {self.__estado} no canal {self.__canal} e no volume {self.__volume}'
         return f'O televisor está {self.__estado}'
-             
-tv1 = Televisor(5, 2)
-tv1.liga_desliga()
+
+    def volume_acima(self):
+        if self.__volume < 10:
+            self.__volume += 1
+            print(f'Volume aumentado para {self.__volume}')
+        else:
+            print(f'Não é possível aumentar o volume, volume máximo: {self.__volume}')
+
+    def volume_abaixo(self):
+        if self.__volume > 0:
+            self.__volume -= 1
+            print(f'Volume abaixado para {self.__volume}')
+        else:
+            print(f'Não é possível abaixar o volume, volume mínimo: {self.__volume}')
+
+tv1 = Televisor(5, 5)
 tv1.liga_desliga()
 print(Televisor.imprimir(tv1))
-
+tv1.volume_acima()
+tv1.volume_abaixo()
+'''
 #26) Escreva um código que apresente a classe Microondas, com atributo ligado e o método imprimir. O método imprimir deve mostrar na tela os valores de todos os atributos. O atributo ligado será boleano e deverá indicar o estado atual do microondas, se ligado ou desligado. 
-
 #27) Baseando-se no exercício 26 adicione um método construtor que permita a definição de todos os atributos no momento da instanciação do objeto. 
-
 #28) Baseando-se no exercício 27 adicione os métodos ligar e desligar que deverão mudar o conteúdo do atributo ligado conforme o caso.
-
 #29) Baseando-se no exercício 28 adicione o atributo portaFechada que deverá ser boleano e deverá indicar se a porta do microondas está ou não fechada. O método imprimir deve ser modificado de forma a mostrar na tela os valores de todos os atributos. 
-
 #30) Baseando-se no exercício 29 adicione os métodos fecharPorta e abrirPorta que deverá mudar o conteúdo do atributo portaFechada conforme o caso. 
-
 #31) Baseando-se no exercício 30 modifique o método ligar para que só ligue o equipamento quando a porta do mesmo estiver fechada, simulando assim o funcionamento de um microondas.
+'''
+class Microondas:
+    def __init__(self) -> None:
+        self.__ligado = False
+        self.__estado_ligado = 'Desligado'
+        self.__porta = False
+        self.__estado_porta = 'Fechada'
+    
+    def fecha_abre(self):
+        if self.__porta:
+            self.__porta = False
+            self.__estado_porta = 'Fechada'
+        else:
+            self.__porta = True
+            self.__estado_porta = 'Aberta'
+            self.__ligado = False
+            self.__estado_ligado = 'Desligado'
+
+
+    def liga_desliga(self):
+        if self.__ligado:
+            self.__ligado = False
+            self.__estado_ligado = 'Desligado'
+        else:
+            self.__ligado = True
+            self.__estado_ligado = 'Ligado'
+            self.__porta = False
+            self.__estado_porta = 'Fechada'
+    
+    def imprimir(self):
+        print (f'O microondas está {self.__estado_ligado} e com a porta {self.__estado_porta}')
+
+m1 = Microondas()
+m1.imprimir()
+m1.fecha_abre()
+m1.imprimir()
+m1.liga_desliga()
+m1.imprimir()
+m1.fecha_abre()
+m1.imprimir()
+
+'''
