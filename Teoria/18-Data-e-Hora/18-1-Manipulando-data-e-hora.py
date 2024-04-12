@@ -59,10 +59,18 @@ print(hoje)
 hoje_formatado = hoje.strftime('%d/%m/%Y')
 print(hoje_formatado)
 
+#Data hoje por extenso
+mes_extenso = ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+hoje = datetime.datetime.today()
+print(f'{hoje.day} de {mes_extenso[hoje.month - 1]} de {hoje.year}')
+
+
+#Somente a hora
+almoco = datetime.time(12, 30, 0, 0)
+print(almoco)
+
+
 '''
 import datetime
 
-
-
-
-
+#Marcando tempo de execução
