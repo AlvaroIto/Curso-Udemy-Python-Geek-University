@@ -1,6 +1,4 @@
-'''
-
-Python tem um módulo built-in para se trabalhar com data e hora chamado datetime
+#Python tem um módulo built-in para se trabalhar com data e hora chamado datetime
 
 import datetime
 
@@ -69,8 +67,3 @@ print(f'{hoje.day} de {mes_extenso[hoje.month - 1]} de {hoje.year}')
 almoco = datetime.time(12, 30, 0, 0)
 print(almoco)
 
-
-'''
-import datetime
-
-#Marcando tempo de execução
