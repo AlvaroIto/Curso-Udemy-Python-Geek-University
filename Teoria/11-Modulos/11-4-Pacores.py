@@ -1,9 +1,8 @@
-"""
-Pacote
+#Pacote
 
-Módulo -> É apenas um arquivo Python que pode ter diversas funções para utilizarmos
+#Módulo -> É apenas um arquivo Python que pode ter diversas funções para utilizarmos
 
-Pacotes -> É um diretório contendo uma coleção de módulos
+#Pacotes -> É um diretório contendo uma coleção de módulos
 
 #Importando pacote
 from pacote import geek1, geek2 
@@ -25,5 +24,4 @@ print(geek4.funcao4())
 from pacote.geek1 import funcao1 
 print(funcao1(4, 7))
 
-"""
 
