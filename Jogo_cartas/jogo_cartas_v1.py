@@ -1,20 +1,24 @@
 import random
+from typing import List, Tuple, set, Dict
 
 naipes = '♠ ♡ ♣ ♢'.split()
 cartas = '2 3 4 5 6 7 8 9 10 J Q K A'.split()
 
-def criar_baralho(aleatorio=False):
+CARTA = Tuple[str, str]
+BARALHO = List[carta]
+
+def criar_baralho(aleatorio: bool = False) -> BARALHO:
     """cria um baralho com 52 cartas para jogar"""
     baralho = [(n, c) for c in cartas for n in naipes]
     if aleatorio:
         random.shuffle(baralho)
     return baralho
 
-def distribuir_cartas(baralho):
+def distribuir_cartas(baralho: BARALHO) -> Tuple[BARALHO, BARALHO, BARALHO, BARALHO]:
     """gerencia a mão de cartas de acordo com o baralho gerado"""
     return (baralho[0::4], baralho[1::4], baralho[2::4], baralho[3::4])
 
-def jogar():
+def jogar() -> None:
     """inicia um jogo de cartas para 4 jogadores"""
     cartas = criar_baralho(aleatorio=True)
     jogadores = 'p1 p2 p3 p4'.split()
